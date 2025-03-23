@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,8 @@ namespace Database.Resources
     public class ResourcesDatabase : ScriptableObject
     {
         #region VARIABLES
+
+        public const string GET_RESOURCE_DATA_METHOD = "@" + nameof(ResourcesDatabase) + "." + nameof(GetResourceDatas) + "()";
 
         [SerializeField] private List<ResourceData> resourceDatas;
 
@@ -21,9 +24,19 @@ namespace Database.Resources
 
         #region METHODS
 
-        public ResourceData GetItemData(int id)
+        public ResourceData GetResourceData(int id)
         {
             return ResourceDatas.Find(x => x.IdEquals(id));
+        }
+
+
+        public static IEnumerable GetResourceDatas()
+        {
+            ValueDropdownList<int> values = new();
+            foreach (ResourceData resourceData in MainDatabases.Instance.ItemsDatabase.ItemDatas)
+                values.Add(resourceData.ItemName, resourceData.Id);
+
+            return values;
         }
 
         #endregion

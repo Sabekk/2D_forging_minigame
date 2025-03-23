@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,8 @@ namespace Database.Items
     public class ItemsDatabase : ScriptableObject
     {
         #region VARIABLES
+
+        public const string GET_ITEM_DATA_METHOD = "@" + nameof(ItemsDatabase) + "." + nameof(GetItemDatas) + "()";
 
         [SerializeField] private List<ItemData> itemDatas;
 
@@ -24,6 +27,15 @@ namespace Database.Items
         public ItemData GetItemData(int id)
         {
             return ItemDatas.Find(x => x.IdEquals(id));
+        }
+
+        public static IEnumerable GetItemDatas()
+        {
+            ValueDropdownList<int> values = new();
+            foreach (ItemData itemData in MainDatabases.Instance.ItemsDatabase.ItemDatas)
+                values.Add(itemData.ItemName, itemData.Id);
+
+            return values;
         }
 
         #endregion
