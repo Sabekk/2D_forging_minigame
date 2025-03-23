@@ -1,19 +1,34 @@
 using Sirenix.OdinInspector;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseDataOfDatabase : IIdEqualable
+namespace Database
 {
-    [SerializeField, ReadOnly] protected int id = Guid.NewGuid().GetHashCode();
-    [SerializeField, FoldoutGroup("Base setting")] protected string dataName;
-
-    public int Id => id;
-    public string DataName => dataName;
-
-    public bool IdEquals(int id)
+    public class BaseDataOfDatabase : IIdEqualable
     {
-        return Id == id;
+
+        #region VARIABLES
+
+        [SerializeField, ReadOnly] protected int id = Guid.NewGuid().GetHashCode();
+        [SerializeField, FoldoutGroup("Base setting"), Tooltip("Basic name of created object by this data")] protected string dataName;
+
+        #endregion
+
+        #region PROPERTIES
+
+        public int Id => id;
+        public string DataName => dataName;
+
+        #endregion
+
+        #region METHODS
+
+        public bool IdEquals(int id)
+        {
+            return Id == id;
+        }
+
+        #endregion
+
     }
 }

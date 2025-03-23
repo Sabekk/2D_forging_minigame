@@ -42,7 +42,7 @@ namespace Database.Resources
         public static IEnumerable GetResourceDatas()
         {
             ValueDropdownList<int> values = new();
-            foreach (ResourceData resourceData in MainDatabases.Instance.ItemsDatabase.Datas)
+            foreach (ResourceData resourceData in MainDatabases.Instance.ResourcesDatabase.Datas)
                 values.Add(resourceData.DataName, resourceData.Id);
 
             return values;

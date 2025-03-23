@@ -12,3 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2545654398dabde45b1af20fc82b6cfe, type: 3}
   m_Name: MachinesDatabase
   m_EditorClassIdentifier: 
+  datas:
+  - id: 359342894
+    dataName: Smelter
+    icon: {fileID: 21300000, guid: 5d4d847e43373f140a79c995a90e4f1e, type: 3}
+  - id: 372536631
+    dataName: Anvil
+    icon: {fileID: 21300000, guid: be42f927e30343a47b64defb9bdd721a, type: 3}
+  - id: 1018820749
+    dataName: Enchanter
+    icon: {fileID: 21300000, guid: 8439aa80493fea44b8eac32cad353bc9, type: 3}
+  - id: -1420275462
+    dataName: Rune Carver
+    icon: {fileID: 21300000, guid: ad410a62f6af1e04187d54ce1b86ca0a, type: 3}
+  - id: 406956412
+    dataName: Dragon Forge
+    icon: {fileID: 21300000, guid: 5e063e9713f312e4896845d146610875, type: 3}

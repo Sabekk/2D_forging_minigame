@@ -26,11 +26,6 @@ namespace Database.Items
 
         #region METHODS
 
-        public bool IdEquals(int id)
-        {
-            return Id == id;
-        }
-
         #endregion
     }
 }

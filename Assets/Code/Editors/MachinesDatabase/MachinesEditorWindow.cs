@@ -1,10 +1,10 @@
-using Database.Resources;
+using Database.Machines;
 using UnityEditor;
 using UnityEngine;
 
 namespace Editor
 {
-    public class ResourcesEditorWindow : BaseEditorWindow<ResourcesDatabase, ResourceData>
+    public class MachinesEditorWindow : BaseEditorWindow<MachinesDatabase, MachineData>
     {
         #region VARIABLES
 
@@ -12,16 +12,16 @@ namespace Editor
 
         #region PROPERTIES
 
-        protected override string DatabaseName => "Resouerce database";
+        protected override string DatabaseName => "Machines database";
 
         #endregion
 
         #region METHODS
 
-        [MenuItem("Tools/Resouerce Editor")]
+        [MenuItem("Tools/Machines editor")]
         public static void OpenWindow()
         {
-            ResourcesEditorWindow window = GetWindow<ResourcesEditorWindow>(string.Format("Resouerce data editor"));
+            MachinesEditorWindow window = GetWindow<MachinesEditorWindow>(string.Format($"Machines editor"));
             window.minSize = new Vector2(800f, 800f);
             window.maxSize = new Vector2(800f, 800f);
 
@@ -29,6 +29,5 @@ namespace Editor
         }
 
         #endregion
-
     }
 }

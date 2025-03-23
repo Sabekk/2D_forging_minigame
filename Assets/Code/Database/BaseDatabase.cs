@@ -21,6 +21,8 @@ namespace Database
 
         #endregion
 
+        #region METHODS
+
         public void AddNewItemData(T itemData)
         {
             datas.Add(itemData);
@@ -36,5 +38,6 @@ namespace Database
             return Datas.Find(x => x.IdEquals(id));
         }
 
+        #endregion
     }
 }
