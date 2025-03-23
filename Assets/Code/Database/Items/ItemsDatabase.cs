@@ -9,13 +9,22 @@ namespace Database.Items
     {
         #region VARIABLES
 
+        [SerializeField] private List<ItemData> itemDatas;
+
         #endregion
 
         #region PROPERTIES
 
+        public List<ItemData> ItemDatas => itemDatas;
+
         #endregion
 
         #region METHODS
+
+        public ItemData GetItemData(int id)
+        {
+            return ItemDatas.Find(x => x.IdEquals(id));
+        }
 
         #endregion
     }
