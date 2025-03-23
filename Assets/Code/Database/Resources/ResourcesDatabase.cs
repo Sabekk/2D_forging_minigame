@@ -9,13 +9,22 @@ namespace Database.Resources
     {
         #region VARIABLES
 
+        [SerializeField] private List<ResourceData> resourceDatas;
+
         #endregion
 
         #region PROPERTIES
 
+        public List<ResourceData> ResourceDatas => resourceDatas;
+
         #endregion
 
         #region METHODS
+
+        public ResourceData GetItemData(int id)
+        {
+            return ResourceDatas.Find(x => x.IdEquals(id));
+        }
 
         #endregion
     }

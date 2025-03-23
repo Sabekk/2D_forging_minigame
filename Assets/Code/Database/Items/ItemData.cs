@@ -10,18 +10,21 @@ namespace Database.Items
         #region VARIABLES
 
         [SerializeField, ReadOnly] protected int id = Guid.NewGuid().GetHashCode();
-        [SerializeField] protected string itemName;
-        [SerializeField] protected Sprite icon;
-        [SerializeField] protected int sellValue;
+        [SerializeField, FoldoutGroup("Base setting")] protected string itemName;
+        [SerializeField, FoldoutGroup("Base setting")] protected Sprite icon;
+        [SerializeField, FoldoutGroup("Sell setting")] protected bool canSell;
+        [SerializeField, FoldoutGroup("Sell setting"), ShowIf(nameof(canSell))] protected int sellValue;
 
 
         #endregion
 
         #region PROPERTIES
+
         public int Id => id;
         public int SellValue => sellValue;
         public Sprite Icon => icon;
         public string ItemName => itemName;
+        public bool CanBeSelled => canSell;
 
         #endregion
 

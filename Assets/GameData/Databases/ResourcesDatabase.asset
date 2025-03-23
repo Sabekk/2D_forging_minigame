@@ -12,3 +12,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c41dbfea59764043be8054cf45a4b8e, type: 3}
   m_Name: ResourcesDatabase
   m_EditorClassIdentifier: 
+  resourceDatas:
+  - id: 2076486612
+    itemName: Iron Ore
+    icon: {fileID: 21300000, guid: 64918316628859c40a6a49197d944bf1, type: 3}
+    canSell: 1
+    sellValue: 1
+    canBuying: 1
+    buyValue: 5
+    autoFilling: 1
+    timeToReceive: 10
+    receiveCount: 1
+  - id: -606447600
+    itemName: Gold Ore
+    icon: {fileID: 21300000, guid: f72e42b3d52df084c94c99d9f645c8be, type: 3}
+    canSell: 1
+    sellValue: 3
+    canBuying: 1
+    buyValue: 20
+    autoFilling: 1
+    timeToReceive: 20
+    receiveCount: 1
+  - id: 1495214575
+    itemName: Fire Shard
+    icon: {fileID: 21300000, guid: 53ace7ed48f363f44be2db3e448fd2a8, type: 3}
+    canSell: 1
+    sellValue: 5
+    canBuying: 1
+    buyValue: 30
+    autoFilling: 1
+    timeToReceive: 30
+    receiveCount: 1
+  - id: 596868079
+    itemName: Ember Dust
+    icon: {fileID: 21300000, guid: fbca68981b63eab4582c50f5ed867215, type: 3}
+    canSell: 1
+    sellValue: 10
+    canBuying: 1
+    buyValue: 50
+    autoFilling: 1
+    timeToReceive: 50
+    receiveCount: 1
+  - id: 1772963594
+    itemName: Dragon Scale
+    icon: {fileID: 21300000, guid: b6d6a888ddca2d849b975e6bd5f9c876, type: 3}
+    canSell: 1
+    sellValue: 15
+    canBuying: 1
+    buyValue: 75
+    autoFilling: 1
+    timeToReceive: 75
+    receiveCount: 1
