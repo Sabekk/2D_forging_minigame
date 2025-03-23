@@ -24,6 +24,16 @@ namespace Database.Items
 
         #region METHODS
 
+        public void AddNewItemData(ItemData itemData)
+        {
+            itemDatas.Add(itemData);
+        }
+
+        public void DeleteItemData(ItemData itemData)
+        {
+            itemDatas.Remove(itemData);
+        }
+
         public ItemData GetItemData(int id)
         {
             return ItemDatas.Find(x => x.IdEquals(id));

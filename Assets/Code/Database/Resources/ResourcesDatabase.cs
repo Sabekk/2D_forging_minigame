@@ -24,11 +24,20 @@ namespace Database.Resources
 
         #region METHODS
 
+        public void AddNewResourceData(ResourceData resourceData)
+        {
+            resourceDatas.Add(resourceData);
+        }
+
+        public void DeleteResourceData(ResourceData resourceData)
+        {
+            resourceDatas.Remove(resourceData);
+        }
+
         public ResourceData GetResourceData(int id)
         {
             return ResourceDatas.Find(x => x.IdEquals(id));
         }
-
 
         public static IEnumerable GetResourceDatas()
         {
