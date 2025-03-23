@@ -3,6 +3,8 @@ using Database.Machines;
 using Database.Quests;
 using Database.Recipes;
 using Database.Resources;
+using System;
+using System.Reflection;
 using UnityEngine;
 
 namespace Database
@@ -34,6 +36,20 @@ namespace Database
         #endregion
 
         #region METHODS
+
+        public object GetPropertyByType(Type type)
+        {
+            PropertyInfo[] properties = typeof(MainDatabases).GetProperties();
+            foreach (var property in properties)
+            {
+                if (property.PropertyType == type)
+                {
+                    return property.GetValue(Instance);
+                }
+            }
+
+            return null;
+        }
 
         #endregion
     }

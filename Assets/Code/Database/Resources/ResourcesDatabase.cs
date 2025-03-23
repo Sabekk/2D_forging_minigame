@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Database.Resources
 {
     [CreateAssetMenu(menuName = "Database/ResourcesDatabase", fileName = "ResourcesDatabase")]
-    public class ResourcesDatabase : ScriptableObject
+    public class ResourcesDatabase : BaseDatabase<ResourceData>
     {
         #region VARIABLES
 
@@ -42,8 +42,8 @@ namespace Database.Resources
         public static IEnumerable GetResourceDatas()
         {
             ValueDropdownList<int> values = new();
-            foreach (ResourceData resourceData in MainDatabases.Instance.ItemsDatabase.ItemDatas)
-                values.Add(resourceData.ItemName, resourceData.Id);
+            foreach (ResourceData resourceData in MainDatabases.Instance.ItemsDatabase.Datas)
+                values.Add(resourceData.DataName, resourceData.Id);
 
             return values;
         }

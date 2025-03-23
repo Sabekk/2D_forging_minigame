@@ -12,54 +12,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd4da2ee6231e17459b434605a22f831, type: 3}
   m_Name: ItemsDatabase
   m_EditorClassIdentifier: 
-  itemDatas:
-  - id: -780902256
-    itemName: Iron Ingot
+  datas:
+  - id: -58124609
+    dataName: Iron Ingot
     icon: {fileID: 21300000, guid: ee49b3c4b227aed40bbe832d71f278d4, type: 3}
     canSell: 1
-    sellValue: 10
-  - id: 328455225
-    itemName: Steel Ingot
+    sellValue: 20
+  - id: -1663973878
+    dataName: Steel Ingot
     icon: {fileID: 21300000, guid: d9505c7e21485b346a7aa5f075af2b47, type: 3}
     canSell: 1
-    sellValue: 20
-  - id: 740876282
-    itemName: Gold Ingot
+    sellValue: 15
+  - id: -425650037
+    dataName: Gold Ingot
     icon: {fileID: 21300000, guid: 8e7b9c760bcc6eb458144a11bf1114f2, type: 3}
     canSell: 1
-    sellValue: 30
-  - id: -824992703
-    itemName: Flame-Gold Ingot
+    sellValue: 20
+  - id: 797515009
+    dataName: Flame-Gold Ingot
     icon: {fileID: 21300000, guid: ae6935bfeae600a4e86168580edf0153, type: 3}
     canSell: 1
-    sellValue: 50
-  - id: 212741214
-    itemName: Ember Blade
+    sellValue: 30
+  - id: -548124167
+    dataName: Ember Blade
     icon: {fileID: 21300000, guid: 86a1b8aba7b814143923293f28232e05, type: 3}
     canSell: 1
-    sellValue: 75
-  - id: -1798907618
-    itemName: Draconic Shield
+    sellValue: 50
+  - id: 1977560023
+    dataName: Draconic Shield
     icon: {fileID: 21300000, guid: a9766cccd634ef34da7a51c0bd848b5b, type: 3}
     canSell: 1
-    sellValue: 75
-  - id: 302497133
-    itemName: Radiant Staff
+    sellValue: 50
+  - id: -162212129
+    dataName: Radiant Staff
     icon: {fileID: 21300000, guid: e8ffa52f65d4cf14c942fce124f5f42c, type: 3}
     canSell: 1
-    sellValue: 75
-  - id: 1962175581
-    itemName: Enhanced Ember Blade
+    sellValue: 50
+  - id: -501431467
+    dataName: Enhanced Ember Blade
     icon: {fileID: 21300000, guid: ab06b44af60ef1d49a52bcf83aed646e, type: 3}
     canSell: 1
-    sellValue: 120
-  - id: -214266295
-    itemName: Enhanced Radiant Staff
+    sellValue: 100
+  - id: -196075705
+    dataName: Enhanced Radiant Staff
     icon: {fileID: 21300000, guid: e4a50a2f4451b274b8d51ecbe8043c72, type: 3}
     canSell: 1
-    sellValue: 120
-  - id: 1121247417
-    itemName: Draconic Crown
+    sellValue: 100
+  - id: -908305768
+    dataName: Draconic Crown
     icon: {fileID: 21300000, guid: 844fe3ff3abe6db45848fe98183084c7, type: 3}
     canSell: 1
-    sellValue: 120
+    sellValue: 100

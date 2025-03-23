@@ -5,12 +5,10 @@ using UnityEngine;
 namespace Database.Items
 {
     [Serializable]
-    public class ItemData : IIdEqualable
+    public class ItemData : BaseDataOfDatabase
     {
         #region VARIABLES
 
-        [SerializeField, ReadOnly] protected int id = Guid.NewGuid().GetHashCode();
-        [SerializeField, FoldoutGroup("Base setting")] protected string itemName;
         [SerializeField, FoldoutGroup("Base setting")] protected Sprite icon;
         [SerializeField, FoldoutGroup("Sell setting")] protected bool canSell;
         [SerializeField, FoldoutGroup("Sell setting"), ShowIf(nameof(canSell))] protected int sellValue;
@@ -20,10 +18,8 @@ namespace Database.Items
 
         #region PROPERTIES
 
-        public int Id => id;
         public int SellValue => sellValue;
         public Sprite Icon => icon;
-        public string ItemName => itemName;
         public bool CanBeSelled => canSell;
 
         #endregion
