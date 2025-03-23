@@ -12,3 +12,138 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 794f360ba74b1634898590ce844f6ec6, type: 3}
   m_Name: RecipesDatabase
   m_EditorClassIdentifier: 
+  datas:
+  - id: 2045771086
+    dataName: Smelter Recipes
+    intendedMachineDataId: 359342894
+    recipeDatas:
+    - id: 1056328891
+      dataName: Iron Ingot Recipe
+      createdItemDataId: -58124609
+      canBroke: 0
+      craftingTime: 2
+      successChance: 0
+      neededResources:
+      - resourceDataId: -403981342
+        neededCount: 1
+      neededItems: []
+    - id: 1817907579
+      dataName: Gold Ingot Recipe
+      createdItemDataId: -425650037
+      canBroke: 0
+      craftingTime: 3
+      successChance: 0
+      neededResources:
+      - resourceDataId: 1870374884
+        neededCount: 1
+      neededItems: []
+  - id: 667274848
+    dataName: Anvil Recipes
+    intendedMachineDataId: 372536631
+    recipeDatas:
+    - id: 884203035
+      dataName: Steel Ingot Recipe
+      createdItemDataId: -1663973878
+      canBroke: 1
+      craftingTime: 4
+      successChance: 90
+      neededResources:
+      - resourceDataId: 1413169207
+        neededCount: 1
+      neededItems:
+      - itemDataId: -58124609
+        neededCount: 1
+    - id: -1163006853
+      dataName: Flame-Gold Ingot Recipe
+      createdItemDataId: 797515009
+      canBroke: 1
+      craftingTime: 5
+      successChance: 85
+      neededResources:
+      - resourceDataId: 1413169207
+        neededCount: 1
+      neededItems:
+      - itemDataId: 797515009
+        neededCount: 1
+  - id: 1718838376
+    dataName: Enchanter Recipes
+    intendedMachineDataId: 1018820749
+    recipeDatas:
+    - id: -864765431
+      dataName: Ember Blade Recipe
+      createdItemDataId: -548124167
+      canBroke: 1
+      craftingTime: 5
+      successChance: 80
+      neededResources:
+      - resourceDataId: 0
+        neededCount: 0
+      neededItems: []
+    - id: -1849712112
+      dataName: Radiant Staff Recipe
+      createdItemDataId: -162212129
+      canBroke: 1
+      craftingTime: 6
+      successChance: 75
+      neededResources:
+      - resourceDataId: 1951934131
+        neededCount: 1
+      neededItems:
+      - itemDataId: 797515009
+        neededCount: 1
+  - id: 1129504267
+    dataName: Rune Carver Recipes
+    intendedMachineDataId: -1420275462
+    recipeDatas:
+    - id: -977764719
+      dataName: Enhanced Ember Blade Recipe
+      createdItemDataId: -501431467
+      canBroke: 1
+      craftingTime: 4
+      successChance: 85
+      neededResources:
+      - resourceDataId: 1951934131
+        neededCount: 1
+      neededItems:
+      - itemDataId: -548124167
+        neededCount: 1
+    - id: -1970250351
+      dataName: Enhanced Radiant Staff Recipe
+      createdItemDataId: -196075705
+      canBroke: 1
+      craftingTime: 5
+      successChance: 80
+      neededResources:
+      - resourceDataId: 1951934131
+        neededCount: 1
+      neededItems:
+      - itemDataId: -162212129
+        neededCount: 1
+  - id: 360233739
+    dataName: 'Dragon Forge Recipes '
+    intendedMachineDataId: 406956412
+    recipeDatas:
+    - id: 143159915
+      dataName: Draconic Shield Recipe
+      createdItemDataId: 1977560023
+      canBroke: 1
+      craftingTime: 6
+      successChance: 75
+      neededResources:
+      - resourceDataId: -948907034
+        neededCount: 1
+      neededItems:
+      - itemDataId: -1663973878
+        neededCount: 1
+    - id: 808350194
+      dataName: Draconic Crown Recipe
+      createdItemDataId: -908305768
+      canBroke: 1
+      craftingTime: 7
+      successChance: 70
+      neededResources:
+      - resourceDataId: -948907034
+        neededCount: 1
+      neededItems:
+      - itemDataId: 797515009
+        neededCount: 1
