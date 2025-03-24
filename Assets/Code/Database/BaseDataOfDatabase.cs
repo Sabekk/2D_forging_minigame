@@ -10,7 +10,7 @@ namespace Database
         #region VARIABLES
 
         [SerializeField, ReadOnly] protected int id = Guid.NewGuid().GetHashCode();
-        [SerializeField, FoldoutGroup("Base setting"), Tooltip("Basic name of created object by this data")] protected string dataName;
+        [SerializeField, Tooltip("Basic name of created object by this data")] protected string dataName;
 
         #endregion
 

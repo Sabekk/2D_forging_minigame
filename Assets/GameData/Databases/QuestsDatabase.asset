@@ -12,3 +12,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e269ca0aaade8154c916a3bda1595182, type: 3}
   m_Name: QuestsDatabase
   m_EditorClassIdentifier: 
+  datas:
+  - id: 1047399280
+    dataName: Smelt Mastery
+    hasLimitedTime: 0
+    limitedTime: 0
+    objectivesData:
+    - rid: 1857872837541101568
+  - id: -770296830
+    dataName: Elemental
+    hasLimitedTime: 0
+    limitedTime: 0
+    objectivesData:
+    - rid: 1857872837541101569
+  references:
+    version: 2
+    RefIds:
+    - rid: 1857872837541101568
+      type: {class: QuestObjective_CraftItems, ns: Gameplay.Quests, asm: Assembly-CSharp}
+      data:
+        objectiveName: Craft 5 Iron Ingots
+        comparisonType: 4
+        targetValue: 5
+        hasDurationTime: 0
+        durationTime: 0
+        reversedCondition: 0
+        status: 0
+        currentValue: 0
+        timeLeft: 0
+        targetItemDataId: -58124609
+    - rid: 1857872837541101569
+      type: {class: QuestObjective_CraftItems, ns: Gameplay.Quests, asm: Assembly-CSharp}
+      data:
+        objectiveName: Craft 2 Ember Blades
+        comparisonType: 0
+        targetValue: 2
+        hasDurationTime: 0
+        durationTime: 0
+        reversedCondition: 0
+        status: 0
+        currentValue: 0
+        timeLeft: 0
+        targetItemDataId: -548124167

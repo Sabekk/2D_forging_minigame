@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Database.Quests
 {
     [CreateAssetMenu(menuName = "Database/QuestsDatabase", fileName = "QuestsDatabase")]
-    public class QuestsDatabase : ScriptableObject
+    public class QuestsDatabase : BaseDatabase<QuestData>
     {
         #region VARIABLES
 
