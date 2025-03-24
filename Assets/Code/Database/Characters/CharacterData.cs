@@ -1,12 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Gameplay.Management.Effects
+namespace Database.Character
 {
-    public class EffectsManager : GameplayManager<EffectsManager>
+    [Serializable]
+    public class CharacterData : BaseDataOfDatabase
     {
         #region VARIABLES
+
+        //TODO Starting values and unlocks
 
         #endregion
 

@@ -1,4 +1,6 @@
-using Gameplay.Effects;
+using Gameplay.Management.Characters;
+using Gameplay.Management.Effects;
+using Gameplay.Management.Timing;
 
 namespace Gameplay.Management
 {
@@ -16,7 +18,9 @@ namespace Gameplay.Management
 
         protected override void SetManagers()
         {
+            managers.Add(TimeManager.Instance);
             managers.Add(EffectsManager.Instance);
+            managers.Add(CharacterManager.Instance);
         }
 
         #endregion

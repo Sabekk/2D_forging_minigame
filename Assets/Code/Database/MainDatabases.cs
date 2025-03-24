@@ -1,3 +1,4 @@
+using Database.Character;
 using Database.Items;
 using Database.Machines;
 using Database.Quests;
@@ -19,6 +20,7 @@ namespace Database
         [SerializeField] private ResourcesDatabase resourcesDatabase;
         [SerializeField] private MachinesDatabase machinesDatabase;
         [SerializeField] private QuestsDatabase questsDatabase;
+        [SerializeField] private CharactersDatabase charactersDatabase;
 
         #endregion
 
@@ -32,6 +34,7 @@ namespace Database
         public ResourcesDatabase ResourcesDatabase => resourcesDatabase;
         public MachinesDatabase MachinesDatabase => machinesDatabase;
         public QuestsDatabase QuestsDatabase => questsDatabase;
+        public CharactersDatabase CharactersDatabase => charactersDatabase;
 
         #endregion
 

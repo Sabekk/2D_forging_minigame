@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Gameplay.Management.Effects
+namespace Gameplay.Player.Controller.Inventory
 {
-    public class EffectsManager : GameplayManager<EffectsManager>
+    public class InventoryController : ControllerBase
     {
         #region VARIABLES
 

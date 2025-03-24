@@ -1,8 +1,7 @@
-using Gameplay.Management;
 using System;
 using UnityEngine;
 
-namespace Gameplay.Timing
+namespace Gameplay.Management.Timing
 {
     public class TimeManager : GameplayManager<TimeManager>
     {

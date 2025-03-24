@@ -1,4 +1,4 @@
-using Gameplay.Timing;
+using Gameplay.Management.Timing;
 using System;
 
 namespace Gameplay.Quests

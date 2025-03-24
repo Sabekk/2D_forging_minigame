@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Gameplay.Management.Effects
+namespace Gameplay.Player.Controller.Values
 {
-    public class EffectsManager : GameplayManager<EffectsManager>
+    public class ValuesController : ControllerBase
     {
         #region VARIABLES
 
