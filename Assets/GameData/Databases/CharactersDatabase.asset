@@ -18,4 +18,26 @@ MonoBehaviour:
     startingValues:
     - valueName: AdditionalProductionSpeed
       value: 0
+    startingResources:
+      resources:
+      - resourceDataId: -403981342
+        randomInRange: 1
+        startingValue: 3
+        startingValueMax: 5
+      - resourceDataId: 1870374884
+        randomInRange: 1
+        startingValue: 1
+        startingValueMax: 3
+      - resourceDataId: 1413169207
+        randomInRange: 1
+        startingValue: 0
+        startingValueMax: 2
+      - resourceDataId: 1951934131
+        randomInRange: 1
+        startingValue: 0
+        startingValueMax: 2
+      - resourceDataId: -948907034
+        randomInRange: 1
+        startingValue: 0
+        startingValueMax: 1
     startingUnlockedMachines: 2e236b15377534168df8b93c

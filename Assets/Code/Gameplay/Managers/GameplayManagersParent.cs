@@ -1,6 +1,9 @@
 using Gameplay.Management.Characters;
 using Gameplay.Management.Effects;
+using Gameplay.Management.Machines;
+using Gameplay.Management.Resources;
 using Gameplay.Management.Timing;
+using Gameplay.Management.Unlocks;
 
 namespace Gameplay.Management
 {
@@ -21,6 +24,9 @@ namespace Gameplay.Management
             managers.Add(TimeManager.Instance);
             managers.Add(EffectsManager.Instance);
             managers.Add(CharacterManager.Instance);
+            managers.Add(ResourcesManager.Instance);
+            managers.Add(UnlocksManager.Instance);
+            managers.Add(MachinesManager.Instance);
         }
 
         #endregion

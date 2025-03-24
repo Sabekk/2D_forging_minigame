@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace Gameplay.Management.Unlocks
 {
+    [Serializable]
     public class UnlockCategory
     {
         #region ACTIONS
