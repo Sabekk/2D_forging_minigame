@@ -45,7 +45,7 @@ MonoBehaviour:
       type: {class: QuestObjective_CraftItems, ns: Gameplay.Quests, asm: Assembly-CSharp}
       data:
         objectiveName: Craft 2 Ember Blades
-        comparisonType: 0
+        comparisonType: 4
         targetValue: 2
         hasDurationTime: 0
         durationTime: 0

@@ -20,6 +20,12 @@ namespace Gameplay.Management.Unlocks
 
         #region METHODS
 
+        public override void SetStartingValues()
+        {
+            base.SetStartingValues();
+            MachinesUnlocks.SetStartingValues();
+        }
+
         #endregion
     }
 }

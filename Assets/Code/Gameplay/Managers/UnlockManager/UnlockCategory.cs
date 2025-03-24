@@ -1,3 +1,4 @@
+using Gameplay.Management.Characters;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -43,6 +44,13 @@ namespace Gameplay.Management.Unlocks
                 UnlockedIds.Add(id);
                 OnUnlockedId?.Invoke(id);
             }
+        }
+
+        public void SetStartingValues()
+        {
+            if (CharacterManager.Instance && CharacterManager.Instance.Player != null)
+                foreach (var startingUnlockedMachines in CharacterManager.Instance.Player.Data.StartingUnlockedMachines)
+                    UnlockId(startingUnlockedMachines);
         }
 
         public bool InUnlocked(int id)

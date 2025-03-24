@@ -33,6 +33,7 @@ namespace Gameplay.Management
             Initialized = false;
         }
 
+        public virtual void SetStartingValues() { }
         public virtual void AttachEvents() { }
         public virtual void DetachEvents() { }
 

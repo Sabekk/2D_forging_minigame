@@ -1,4 +1,5 @@
 using Database;
+using Gameplay.Management.Characters;
 using Gameplay.Management.Timing;
 using Gameplay.Resources;
 using System.Collections.Generic;
@@ -16,7 +17,7 @@ namespace Gameplay.Management.Resources
 
         #region PROPERTIES
 
-        public List<ResourceInGame> Resources=> resources;
+        public List<ResourceInGame> Resources => resources;
 
         #endregion
 
@@ -27,6 +28,27 @@ namespace Gameplay.Management.Resources
             base.Initialzie();
             resources = new();
             CreateResources();
+        }
+
+        public override void SetStartingValues()
+        {
+            base.SetStartingValues();
+            if (CharacterManager.Instance && CharacterManager.Instance.Player != null)
+            {
+                if (CharacterManager.Instance.Player.Data.StartingResources == null)
+                    return;
+
+                foreach (var startingResource in CharacterManager.Instance.Player.Data.StartingResources.Resources)
+                {
+                    int value = 0;
+                    if (startingResource.RandomInRange == false)
+                        value = startingResource.StartingValue;
+                    else
+                        value = Random.Range(startingResource.StartingValue, startingResource.StartingValueMax + 1);
+
+                    AddResource(value, startingResource.ResourceDataId);
+                }
+            }
         }
 
         public override void AttachEvents()

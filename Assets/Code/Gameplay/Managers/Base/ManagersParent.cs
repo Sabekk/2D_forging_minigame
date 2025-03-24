@@ -31,6 +31,8 @@ namespace Gameplay.Management
             InitializeManagers();
             LateInitializeManagers();
 
+            SetStartingValues();
+
             Initialized = true;
             OnManagersInitialized?.Invoke();
         }
@@ -44,7 +46,9 @@ namespace Gameplay.Management
 
         #region METHODS
 
-        public void InitializeManagers()
+        protected abstract void SetManagers();
+
+        private void InitializeManagers()
         {
             if (managers == null)
                 managers = new();
@@ -55,19 +59,23 @@ namespace Gameplay.Management
                 managers[i].Initialzie();
         }
 
-        public void LateInitializeManagers()
+        private void LateInitializeManagers()
         {
             for (int i = 0; i < managers.Count; i++)
                 managers[i].LateInitialzie();
         }
 
-        public void CleanUpManagers()
+        private void SetStartingValues()
+        {
+            for (int i = 0; i < managers.Count; i++)
+                managers[i].SetStartingValues();
+        }
+
+        private void CleanUpManagers()
         {
             for (int i = 0; i < managers.Count; i++)
                 managers[i].CleanUp();
         }
-
-        protected abstract void SetManagers();
 
         #endregion
     }
