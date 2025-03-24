@@ -1,7 +1,5 @@
+using Gameplay.Timing;
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 namespace Gameplay.Quests
 {
@@ -51,7 +49,8 @@ namespace Gameplay.Quests
         {
             if (HasDurationTime)
             {
-                //TODO attach to timemanager
+                if (TimeManager.Instance)
+                    TimeManager.Instance.OnSeccondPassed += HandleSecondChanged;
             }
         }
 
@@ -59,7 +58,8 @@ namespace Gameplay.Quests
         {
             if (HasDurationTime)
             {
-                //TODO detach to timemanager
+                if (TimeManager.Instance)
+                    TimeManager.Instance.OnSeccondPassed -= HandleSecondChanged;
             }
         }
 
