@@ -12,6 +12,7 @@ namespace Gameplay.Resources
         #region ACTIONS
 
         public event Action OnValueChanged;
+        public event Action OnTimerUpdated;
 
         #endregion
 
@@ -19,6 +20,7 @@ namespace Gameplay.Resources
 
         [SerializeField, ReadOnly] private int dataId;
         [SerializeField] private int currentValue;
+        [SerializeField] private int timeToReceive;
 
         private ResourceData resourceData;
 
@@ -46,6 +48,8 @@ namespace Gameplay.Resources
             }
         }
 
+        public bool TimerShouldBeReseted => ResourceData.AutoFilling ? timeToReceive <= 0 : false;
+
         #endregion
 
         #region CONSTRUCTORS
@@ -55,6 +59,8 @@ namespace Gameplay.Resources
         {
             this.resourceData = resourceData;
             dataId = resourceData.Id;
+
+            ResetTimer();
         }
 
         #endregion
@@ -64,6 +70,20 @@ namespace Gameplay.Resources
         public void AddValue(int delta)
         {
             CurrentValue += delta;
+        }
+
+        public void UpdateTime()
+        {
+            if (!resourceData.AutoFilling)
+                return;
+
+            timeToReceive--;
+            OnTimerUpdated?.Invoke();
+        }
+
+        public void ResetTimer()
+        {
+            timeToReceive = ResourceData.AutoFilling ? resourceData.TimeToReceive : -1;
         }
 
         #endregion
