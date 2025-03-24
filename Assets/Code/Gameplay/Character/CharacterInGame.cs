@@ -5,7 +5,6 @@ using Gameplay.Player.Controller.Effects;
 using Gameplay.Player.Controller.Inventory;
 using Gameplay.Player.Controller.Values;
 using Sirenix.OdinInspector;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

@@ -15,3 +15,6 @@ MonoBehaviour:
   datas:
   - id: -1273159887
     dataName: DefaultPlayer
+    startingValues:
+    - valueName: AdditionalProductionSpeed
+      value: 0

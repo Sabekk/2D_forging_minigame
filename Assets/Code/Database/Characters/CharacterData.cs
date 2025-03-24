@@ -1,5 +1,5 @@
+using Gameplay.Values.Character;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,11 +10,13 @@ namespace Database.Character
     {
         #region VARIABLES
 
-        //TODO Starting values and unlocks
+        [SerializeField] private List<CharacterStartingValue> startingValues;
 
         #endregion
 
         #region PROPERTIES
+
+        public List<CharacterStartingValue> StartingValues => startingValues;
 
         #endregion
 
