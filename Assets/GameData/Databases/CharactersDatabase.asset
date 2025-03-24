@@ -18,3 +18,4 @@ MonoBehaviour:
     startingValues:
     - valueName: AdditionalProductionSpeed
       value: 0
+    startingUnlockedMachines: 2e236b15377534168df8b93c
