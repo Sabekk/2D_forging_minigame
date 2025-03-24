@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Gameplay.Player.Controller.Module
+namespace Gameplay.Character.Controller.Module
 {
     public abstract class ControllerModuleBase : IAttachableEvents
     {

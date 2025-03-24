@@ -1,7 +1,7 @@
 using Gameplay.Values.Character;
 using UnityEngine;
 
-namespace Gameplay.Player.Controller.Values
+namespace Gameplay.Character.Controller.Values
 {
     public class ValuesController : ControllerBase
     {

@@ -2,7 +2,7 @@ using Sirenix.OdinInspector;
 using System;
 using UnityEngine;
 
-namespace Gameplay.Player
+namespace Gameplay.Character
 {
     public class PlayerInGame : CharacterInGame
     {

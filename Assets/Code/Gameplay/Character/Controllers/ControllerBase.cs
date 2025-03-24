@@ -1,9 +1,9 @@
-using Gameplay.Player.Controller.Module;
+using Gameplay.Character.Controller.Module;
 using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace Gameplay.Player.Controller
+namespace Gameplay.Character.Controller
 {
     public class ControllerBase: IAttachableEvents
     {

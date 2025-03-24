@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Gameplay.Character.Controller.Effects
+namespace Gameplay.Machines
 {
-    public class EffectsController : ControllerBase
+    public class MachineProductionBase
     {
         #region VARIABLES
 

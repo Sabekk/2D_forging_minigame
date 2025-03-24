@@ -1,14 +1,14 @@
 using Database;
 using Database.Character;
-using Gameplay.Player.Controller;
-using Gameplay.Player.Controller.Effects;
-using Gameplay.Player.Controller.Inventory;
-using Gameplay.Player.Controller.Values;
+using Gameplay.Character.Controller;
+using Gameplay.Character.Controller.Effects;
+using Gameplay.Character.Controller.Inventory;
+using Gameplay.Character.Controller.Values;
 using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Gameplay.Player
+namespace Gameplay.Character
 {
     public class CharacterInGame : IAttachableEvents
     {

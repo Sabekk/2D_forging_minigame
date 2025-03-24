@@ -1,6 +1,6 @@
 using Database;
 using Database.Character;
-using Gameplay.Player;
+using Gameplay.Character;
 using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using UnityEngine;
