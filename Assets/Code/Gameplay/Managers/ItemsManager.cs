@@ -1,6 +1,9 @@
+using Database;
 using Database.Items;
 using Gameplay.Character;
 using Gameplay.Items;
+using Gameplay.Management.Characters;
+using UnityEngine;
 
 namespace Gameplay.Management.Items
 {
@@ -16,6 +19,11 @@ namespace Gameplay.Management.Items
 
         #region METHODS
 
+        public void AddItemToCharacter(int itemDataId, CharacterInGame character, int itemCount = 1)
+        {
+            ItemData itemData = MainDatabases.Instance.ItemsDatabase.GetItemDataFromCategories(itemDataId);
+            AddItemToCharacter(itemData, character, itemCount);
+        }
 
         public void AddItemToCharacter(ItemData itemData, CharacterInGame character, int itemCount = 1)
         {

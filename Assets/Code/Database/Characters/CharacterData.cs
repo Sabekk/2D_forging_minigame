@@ -1,4 +1,5 @@
 using Database.Machines;
+using Gameplay.Items;
 using Gameplay.Resources;
 using Gameplay.Values.Character;
 using Sirenix.OdinInspector;
@@ -15,6 +16,7 @@ namespace Database.Character
 
         [SerializeField] private List<CharacterStartingValue> startingValues;
         [SerializeField] private StartingResources startingResources;
+        [SerializeField] private StartingItems startingItems;
         [SerializeField, ValueDropdown(MachinesDatabase.GET_MACHINES_DATA_METHOD)] private List<int> startingUnlockedMachines;
 
         #endregion
@@ -24,6 +26,7 @@ namespace Database.Character
         public List<CharacterStartingValue> StartingValues => startingValues;
         public List<int> StartingUnlockedMachines => startingUnlockedMachines;
         public StartingResources StartingResources => startingResources;
+        public StartingItems StartingItems=> startingItems;
 
         #endregion
 

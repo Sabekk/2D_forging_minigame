@@ -40,4 +40,12 @@ MonoBehaviour:
         randomInRange: 1
         startingValue: 0
         startingValueMax: 1
+    startingItems:
+      specialItems:
+      - itemDataId: 226963688
+        count: 1
+        chanceToGet: 100
+      - itemDataId: -1149991110
+        count: 1
+        chanceToGet: 20
     startingUnlockedMachines: 2e236b15377534168df8b93c

@@ -18,6 +18,13 @@ namespace Gameplay.Character.Controller.Inventory
 
         #region METHODS
 
+        public override void Initialize(CharacterInGame character)
+        {
+            base.Initialize(character);
+
+            inventoryModule.SetStartingItems();
+        }
+
         public override void CreateModules()
         {
             base.CreateModules();

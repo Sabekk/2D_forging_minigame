@@ -1,5 +1,7 @@
 using Gameplay.Character.Controller.Module;
 using Gameplay.Items;
+using Gameplay.Management.Items;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +10,15 @@ namespace Gameplay.Character.Controller.Inventory
 {
     public class InventoryModule : ControllerModuleBase
     {
+        #region ACTIONS
+
+        public event Action<ItemInGame> OnItemCollected;
+        public event Action<ItemInGame> OnItemRemoved;
+        public event Action<ItemStackInGame> OnStackCreated;
+        public event Action<ItemStackInGame> OnStackRemoved;
+
+        #endregion
+
         #region VARIABLES
 
         [SerializeField] private List<ItemStackInGame> itemStacks;
@@ -16,17 +27,43 @@ namespace Gameplay.Character.Controller.Inventory
 
         #region PROPERTIES
 
+        public List<ItemStackInGame> ItemStacks
+        {
+            get
+            {
+                if (itemStacks == null)
+                    itemStacks = new();
+                return itemStacks;
+            }
+        }
+
         #endregion
 
         #region METHODS
+
+        public void SetStartingItems()
+        {
+            if (ItemsManager.Instance)
+                foreach (var startingSecialItem in Character.Data.StartingItems.SpecialItems)
+                {
+                    if (UnityEngine.Random.Range(0f, 100f) <= startingSecialItem.ChanceToGet)
+                        ItemsManager.Instance.AddItemToCharacter(startingSecialItem.ItemDataId, Character, startingSecialItem.Count);
+                }
+        }
 
         public void CollectItem(ItemInGame item, int count = 1)
         {
             ItemStackInGame stack = itemStacks.GetElementById(item.ItemData.Id);
             if (stack == null)
+            {
                 stack = new ItemStackInGame(item, count);
+                ItemStacks.Add(stack);
+                OnStackCreated?.Invoke(stack);
+            }
             else
                 stack.AddItemToStack(item);
+
+            OnItemCollected?.Invoke(item);
         }
 
         public void RemoveItem(ItemInGame item, int count = 1)
@@ -38,11 +75,19 @@ namespace Gameplay.Character.Controller.Inventory
             }
             else
                 stack.RemoveItemFromStack(count);
+
+            if (stack.ShouldBeRemoved)
+            {
+                ItemStacks.Remove(stack);
+                OnStackRemoved?.Invoke(stack);
+            }
+
+            OnItemRemoved?.Invoke(item);
         }
 
         public bool CanHandleItemsInStack(ItemInGame item, int count = 1)
         {
-            ItemStackInGame stack = itemStacks.GetElementById(item.ItemData.Id);
+            ItemStackInGame stack = ItemStacks.GetElementById(item.ItemData.Id);
             if (stack == null)
                 return false;
 
