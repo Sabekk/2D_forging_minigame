@@ -55,7 +55,7 @@ namespace Gameplay.Management.Resources
         {
             base.AttachEvents();
             if (TimeManager.Instance)
-                TimeManager.Instance.OnSeccondPassed += HandleSeccondPassed;
+                TimeManager.Instance.OnSecondPassed += HandleSecondPassed;
 
             foreach (var resource in Resources)
                 resource.OnTimerUpdated += () => HandleTimerResourceUpdated(resource);
@@ -65,7 +65,7 @@ namespace Gameplay.Management.Resources
         {
             base.DetachEvents();
             if (TimeManager.Instance)
-                TimeManager.Instance.OnSeccondPassed -= HandleSeccondPassed;
+                TimeManager.Instance.OnSecondPassed -= HandleSecondPassed;
 
             foreach (var resource in Resources)
                 resource.OnTimerUpdated -= () => HandleTimerResourceUpdated(resource);
@@ -95,7 +95,7 @@ namespace Gameplay.Management.Resources
 
         #region HANDLERS
 
-        private void HandleSeccondPassed()
+        private void HandleSecondPassed()
         {
             foreach (var resource in Resources)
                 resource.UpdateTime();

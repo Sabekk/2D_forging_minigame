@@ -41,7 +41,7 @@ namespace Gameplay.Management.Machines
         {
             base.AttachEvents();
             if (TimeManager.Instance)
-                TimeManager.Instance.OnSeccondPassed += HandleSeccondPassed;
+                TimeManager.Instance.OnSecondPassed += HandleSecondPassed;
 
             if (UnlocksManager.Instance)
                 UnlocksManager.Instance.MachinesUnlocks.OnUnlockedId += HandleMachineUnlocked;
@@ -51,7 +51,7 @@ namespace Gameplay.Management.Machines
         {
             base.DetachEvents();
             if (TimeManager.Instance)
-                TimeManager.Instance.OnSeccondPassed -= HandleSeccondPassed;
+                TimeManager.Instance.OnSecondPassed -= HandleSecondPassed;
 
             if (UnlocksManager.Instance)
                 UnlocksManager.Instance.MachinesUnlocks.OnUnlockedId -= HandleMachineUnlocked;
@@ -68,7 +68,7 @@ namespace Gameplay.Management.Machines
 
         #region HANDLERS
 
-        private void HandleSeccondPassed()
+        private void HandleSecondPassed()
         {
             foreach (var machine in machinesInGame)
                 machine.TryChangeProduceTime();

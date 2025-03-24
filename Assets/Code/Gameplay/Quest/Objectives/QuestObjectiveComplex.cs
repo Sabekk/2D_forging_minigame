@@ -50,7 +50,7 @@ namespace Gameplay.Quests
             if (HasDurationTime)
             {
                 if (TimeManager.Instance)
-                    TimeManager.Instance.OnSeccondPassed += HandleSecondChanged;
+                    TimeManager.Instance.OnSecondPassed += HandleSecondChanged;
             }
         }
 
@@ -59,7 +59,7 @@ namespace Gameplay.Quests
             if (HasDurationTime)
             {
                 if (TimeManager.Instance)
-                    TimeManager.Instance.OnSeccondPassed -= HandleSecondChanged;
+                    TimeManager.Instance.OnSecondPassed -= HandleSecondChanged;
             }
         }
 

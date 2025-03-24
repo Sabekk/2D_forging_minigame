@@ -7,7 +7,7 @@ namespace Gameplay.Management.Timing
     {
         #region ACTIONS
 
-        public event Action OnSeccondPassed;
+        public event Action OnSecondPassed;
 
         #endregion
 
@@ -30,7 +30,7 @@ namespace Gameplay.Management.Timing
 
             if (currentTime >= rareTickTime)
             {
-                OnSeccondPassed?.Invoke();
+                OnSecondPassed?.Invoke();
                 currentTime = 0;
             }
         }
