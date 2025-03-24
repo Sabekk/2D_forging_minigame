@@ -23,6 +23,11 @@ namespace Database
 
         #region METHODS
 
+        public virtual T GetItemData(int id)
+        {
+            return Datas.Find(x => x.IdEquals(id));
+        }
+
         public void AddNewItemData(T itemData)
         {
             datas.Add(itemData);
@@ -31,11 +36,6 @@ namespace Database
         public void DeleteItemData(T itemData)
         {
             datas.Remove(itemData);
-        }
-
-        public T GetItemData(int id)
-        {
-            return Datas.Find(x => x.IdEquals(id));
         }
 
         #endregion

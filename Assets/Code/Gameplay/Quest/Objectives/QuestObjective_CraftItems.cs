@@ -8,7 +8,7 @@ namespace Gameplay.Quests
     {
         #region VARIABLES
 
-        [SerializeField, ValueDropdown(ItemsDatabase.GET_ITEM_DATA_METHOD)] private int targetItemDataId;
+        [SerializeField, ValueDropdown(ItemsDatabase.GET_CRAFTABLE_ITEM_DATA_METHOD)] private int targetItemDataId;
 
         #endregion
 

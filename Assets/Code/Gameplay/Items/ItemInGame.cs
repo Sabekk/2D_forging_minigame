@@ -23,7 +23,7 @@ namespace Gameplay.Items
             get
             {
                 if (itemData == null)
-                    itemData = MainDatabases.Instance.ItemsDatabase.GetItemData(dataId);
+                    itemData = MainDatabases.Instance.ItemsDatabase.GetItemDataFromCategories(dataId);
                 return itemData;
             }
         }

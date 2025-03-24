@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Editor
 {
-    public class ItemsEditorWindow : BaseEditorWindow<ItemsDatabase, ItemData>
+    public class ItemsEditorWindow : BaseEditorWindow<ItemsDatabase, ItemCategory>
     {
 
         #region VARIABLES

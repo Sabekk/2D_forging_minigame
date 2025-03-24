@@ -65,12 +65,12 @@ namespace Editor
 
             if (GUILayout.Button("Add new data", SirenixGUIStyles.Button))
             {
-                AddNewResourceData();
+                AddNewData();
             }
 
             if (GUILayout.Button("Delete selected data", SirenixGUIStyles.Button))
             {
-                DeleteResourceData();
+                DeleteData();
             }
 
             SirenixEditorGUI.EndHorizontalToolbar();
@@ -105,13 +105,13 @@ namespace Editor
             AssetDatabase.Refresh();
         }
 
-        private void AddNewResourceData()
+        private void AddNewData()
         {
             Database.AddNewItemData(new T2());
             ForceMenuTreeRebuild();
         }
 
-        private void DeleteResourceData()
+        private void DeleteData()
         {
             T2 dataToDelete = MenuTree.Selection.SelectedValue as T2;
 

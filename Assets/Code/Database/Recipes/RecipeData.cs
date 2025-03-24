@@ -12,7 +12,7 @@ namespace Database.Recipes
     {
         #region VARIABLES
 
-        [SerializeField, FoldoutGroup("Base setting"), ValueDropdown(ItemsDatabase.GET_ITEM_DATA_METHOD)] private int createdItemDataId;
+        [SerializeField, FoldoutGroup("Base setting"), ValueDropdown(ItemsDatabase.GET_CRAFTABLE_ITEM_DATA_METHOD)] private int createdItemDataId;
         [SerializeField, FoldoutGroup("Base setting")] private bool canBroke;
         [SerializeField, FoldoutGroup("Base setting"), SuffixLabel("seconds")] private int craftingTime;
         [SerializeField, FoldoutGroup("Success setting"), ShowIf(nameof(canBroke)), MinValue(0f), MaxValue(100f), SuffixLabel("%")] private int successChance;
@@ -61,7 +61,7 @@ namespace Database.Recipes
         {
             #region VARIABLES
 
-            [SerializeField, ValueDropdown(ItemsDatabase.GET_ITEM_DATA_METHOD)] private int itemDataId;
+            [SerializeField, ValueDropdown(ItemsDatabase.GET_CRAFTABLE_ITEM_DATA_METHOD)] private int itemDataId;
             [SerializeField] private int neededCount;
 
             #endregion
