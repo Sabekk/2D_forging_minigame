@@ -26,7 +26,7 @@ namespace Database.Recipes
 
         public int CreatedItemDataId => createdItemDataId;
         public int CraftingTime => craftingTime;
-        public int SuccessChance => successChance;
+        public int SuccessChance => CanBroke ? successChance : 100;
         public int CategoryId => categoryId;
         public bool CanBroke => canBroke;
         public List<NeededResources> Resources => neededResources;

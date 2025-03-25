@@ -74,10 +74,10 @@ namespace Gameplay.Management.Machines
         {
             float characterChance = 0;
             if (CharacterManager.Instance)
-                characterChance = CharacterManager.Instance.Player.ValuesController.CharacterValues.AdditionalSuccessChance.CurrentValue;
+                characterChance = CharacterManager.Instance.Player.ValuesController.CharacterValues.AdditionalSuccessChance.CurrentRawValue;
             float defaultChance = recipeData.SuccessChance;
 
-            return characterChance + defaultChance;
+            return Math.Clamp(characterChance + defaultChance, 0, 100);
         }
 
         public int GetTotalTimeForRecipe(RecipeData recipeData)

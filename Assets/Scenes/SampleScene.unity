@@ -394,6 +394,14 @@ PrefabInstance:
       propertyPath: allQuests.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3161711444364056570, guid: c267a6954840d754e8c813359fe98709, type: 3}
+      propertyPath: debugRecipeCategory
+      value: 2045771086
+      objectReference: {fileID: 0}
+    - target: {fileID: 3161711444364056570, guid: c267a6954840d754e8c813359fe98709, type: 3}
+      propertyPath: debugRecipeFromCategory
+      value: 1056328891
+      objectReference: {fileID: 0}
     - target: {fileID: 3275829969980656360, guid: c267a6954840d754e8c813359fe98709, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

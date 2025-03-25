@@ -116,10 +116,8 @@ namespace Gameplay.Machines
                     return false;
 
             foreach (var item in recipe.Items)
-            {
                 if (CharacterManager.Instance.Player.InventoryController.InventoryModule.CanHandleItemsInStack(item.ItemDataId, item.NeededCount) == false)
                     return false;
-            }
 
             return true;
         }
