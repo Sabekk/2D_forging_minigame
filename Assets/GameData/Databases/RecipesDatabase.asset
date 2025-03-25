@@ -19,6 +19,7 @@ MonoBehaviour:
     recipeDatas:
     - id: 1056328891
       dataName: Iron Ingot Recipe
+      categoryId: 2045771086
       createdItemDataId: -58124609
       canBroke: 0
       craftingTime: 2
@@ -29,6 +30,7 @@ MonoBehaviour:
       neededItems: []
     - id: 1817907579
       dataName: Gold Ingot Recipe
+      categoryId: 2045771086
       createdItemDataId: -425650037
       canBroke: 0
       craftingTime: 3
@@ -43,6 +45,7 @@ MonoBehaviour:
     recipeDatas:
     - id: 884203035
       dataName: Steel Ingot Recipe
+      categoryId: 667274848
       createdItemDataId: -1663973878
       canBroke: 1
       craftingTime: 4
@@ -55,6 +58,7 @@ MonoBehaviour:
         neededCount: 1
     - id: -1163006853
       dataName: Flame-Gold Ingot Recipe
+      categoryId: 667274848
       createdItemDataId: 797515009
       canBroke: 1
       craftingTime: 5
@@ -71,6 +75,7 @@ MonoBehaviour:
     recipeDatas:
     - id: -864765431
       dataName: Ember Blade Recipe
+      categoryId: 1718838376
       createdItemDataId: -548124167
       canBroke: 1
       craftingTime: 5
@@ -81,6 +86,7 @@ MonoBehaviour:
       neededItems: []
     - id: -1849712112
       dataName: Radiant Staff Recipe
+      categoryId: 1718838376
       createdItemDataId: -162212129
       canBroke: 1
       craftingTime: 6
@@ -97,6 +103,7 @@ MonoBehaviour:
     recipeDatas:
     - id: -977764719
       dataName: Enhanced Ember Blade Recipe
+      categoryId: 1129504267
       createdItemDataId: -501431467
       canBroke: 1
       craftingTime: 4
@@ -109,6 +116,7 @@ MonoBehaviour:
         neededCount: 1
     - id: -1970250351
       dataName: Enhanced Radiant Staff Recipe
+      categoryId: 1129504267
       createdItemDataId: -196075705
       canBroke: 1
       craftingTime: 5
@@ -125,6 +133,7 @@ MonoBehaviour:
     recipeDatas:
     - id: 143159915
       dataName: Draconic Shield Recipe
+      categoryId: 360233739
       createdItemDataId: 1977560023
       canBroke: 1
       craftingTime: 6
@@ -137,6 +146,7 @@ MonoBehaviour:
         neededCount: 1
     - id: 808350194
       dataName: Draconic Crown Recipe
+      categoryId: 360233739
       createdItemDataId: -908305768
       canBroke: 1
       craftingTime: 7

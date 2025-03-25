@@ -1,7 +1,11 @@
 using Database;
+using Database.Recipes;
 using Gameplay.Machines;
+using Gameplay.Management.Characters;
+using Gameplay.Management.Items;
 using Gameplay.Management.Timing;
 using Gameplay.Management.Unlocks;
+using Sirenix.OdinInspector;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -20,6 +24,8 @@ namespace Gameplay.Management.Machines
         #region VARIABLES
 
         [SerializeField] private List<MachineInGame> machinesInGame;
+        [SerializeField, FoldoutGroup("Debug"), ValueDropdown(RecipesDatabase.GET_RECIPE_CATEGORY_DATA_METHOD)] private int debugRecipeCategory;
+        [SerializeField, FoldoutGroup("Debug"), ValueDropdown("@MainDatabases.Instance.RecipesDatabase.GetRecipeFromCategory(debugRecipeCategory)")] private int debugRecipeFromCategory;
 
         #endregion
 
@@ -34,7 +40,11 @@ namespace Gameplay.Management.Machines
             base.Initialzie();
             machinesInGame = new();
             foreach (var machineData in MainDatabases.Instance.MachinesDatabase.Datas)
-                machinesInGame.Add(new MachineInGame(machineData, CheckMachineIsUnlocked(machineData.Id)));
+            {
+                MachineInGame machine = new MachineInGame(machineData, CheckMachineIsUnlocked(machineData.Id));
+                AttachEventsOfMachine(machine);
+                machinesInGame.Add(machine);
+            }
         }
 
         public override void AttachEvents()
@@ -56,6 +66,38 @@ namespace Gameplay.Management.Machines
             if (UnlocksManager.Instance)
                 UnlocksManager.Instance.MachinesUnlocks.OnUnlockedId -= HandleMachineUnlocked;
 
+            foreach (var machine in machinesInGame)
+                DetachEventsOfMachine(machine);
+        }
+
+        public float GetChanceForRecipe(RecipeData recipeData)
+        {
+            float characterChance = 0;
+            if (CharacterManager.Instance)
+                characterChance = CharacterManager.Instance.Player.ValuesController.CharacterValues.AdditionalSuccessChance.CurrentValue;
+            float defaultChance = recipeData.SuccessChance;
+
+            return characterChance + defaultChance;
+        }
+
+        public int GetTotalTimeForRecipe(RecipeData recipeData)
+        {
+            float reducedTime = 0;
+            if (CharacterManager.Instance)
+                reducedTime = CharacterManager.Instance.Player.ValuesController.CharacterValues.AdditionalProductionSpeed.CurrentValue;
+            float defaultTime = recipeData.CraftingTime;
+
+            return Mathf.RoundToInt(defaultTime - reducedTime);
+        }
+
+        private void AttachEventsOfMachine(MachineInGame machine)
+        {
+            machine.OnProductionFinished += HandleProductionFinished;
+        }
+
+        private void DetachEventsOfMachine(MachineInGame machine)
+        {
+            machine.OnProductionFinished -= HandleProductionFinished;
         }
 
         private bool CheckMachineIsUnlocked(int machineDataId)
@@ -67,6 +109,15 @@ namespace Gameplay.Management.Machines
         }
 
         #region HANDLERS
+
+        private void HandleProductionFinished(MachineInGame machine, int itemId, bool isSuccess)
+        {
+            if (isSuccess == false)
+                return;
+
+            if (CharacterManager.Instance && ItemsManager.Instance)
+                ItemsManager.Instance.AddItemToCharacter(itemId, CharacterManager.Instance.Player);
+        }
 
         private void HandleSecondPassed()
         {
@@ -86,6 +137,16 @@ namespace Gameplay.Management.Machines
         }
 
         #endregion
+
+        [Button, FoldoutGroup("Debug")]
+        private void DebugProduce()
+        {
+            RecipesCategory category = MainDatabases.Instance.RecipesDatabase.GetItemData(debugRecipeCategory);
+            RecipeData recipeData = category.RecipeDatas.GetElementById(debugRecipeFromCategory);
+            MachineInGame machine = machinesInGame.Find(x => x.MachineData.IdEquals(category.IntendedMachineDataId));
+            if (machine != null)
+                machine.StartProduce(recipeData);
+        }
 
         #endregion
     }

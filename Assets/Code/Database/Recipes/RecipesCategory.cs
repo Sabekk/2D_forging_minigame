@@ -12,7 +12,7 @@ namespace Database.Recipes
         #region VARIABLES
 
         [SerializeField, ValueDropdown(MachinesDatabase.GET_MACHINES_DATA_METHOD)] private int intendedMachineDataId;
-        [SerializeField] private List<RecipeData> recipeDatas;
+        [SerializeField, OnValueChanged(nameof(SetCategoryForElements))] private List<RecipeData> recipeDatas;
 
         #endregion
 
@@ -24,6 +24,13 @@ namespace Database.Recipes
         #endregion
 
         #region METHODS
+
+        private void SetCategoryForElements()
+        {
+            foreach (var recipe in recipeDatas)
+                recipe.SetCategoryId(Id);
+
+        }
 
         #endregion
     }

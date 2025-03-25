@@ -39,7 +39,6 @@ namespace Gameplay.Management.Characters
 
         [ShowInInspector, ReadOnly]
         public PlayerInGame Player
-
         {
             get
             {

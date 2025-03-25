@@ -86,13 +86,18 @@ namespace Gameplay.Character.Controller.Inventory
             OnItemRemoved?.Invoke(item);
         }
 
-        public bool CanHandleItemsInStack(ItemInGame item, int count = 1)
+        public bool CanHandleItemsInStack(int itemDataId, int count = 1)
         {
-            ItemStackInGame stack = ItemStacks.GetElementById(item.ItemData.Id);
+            ItemStackInGame stack = ItemStacks.GetElementById(itemDataId);
             if (stack == null)
                 return false;
 
             return stack.CountInStack >= count;
+        }
+
+        public bool CanHandleItemsInStack(ItemInGame item, int count = 1)
+        {
+            return CanHandleItemsInStack(item.ItemData.Id, count);
         }
 
         #endregion

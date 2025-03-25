@@ -12,6 +12,7 @@ namespace Database.Recipes
     {
         #region VARIABLES
 
+        [SerializeField, FoldoutGroup("Base setting"), ReadOnly] private int categoryId;
         [SerializeField, FoldoutGroup("Base setting"), ValueDropdown(ItemsDatabase.GET_CRAFTABLE_ITEM_DATA_METHOD)] private int createdItemDataId;
         [SerializeField, FoldoutGroup("Base setting")] private bool canBroke;
         [SerializeField, FoldoutGroup("Base setting"), SuffixLabel("seconds")] private int craftingTime;
@@ -26,6 +27,7 @@ namespace Database.Recipes
         public int CreatedItemDataId => createdItemDataId;
         public int CraftingTime => craftingTime;
         public int SuccessChance => successChance;
+        public int CategoryId => categoryId;
         public bool CanBroke => canBroke;
         public List<NeededResources> Resources => neededResources;
         public List<NeededItems> Items => neededItems;
@@ -33,6 +35,11 @@ namespace Database.Recipes
         #endregion
 
         #region METHODS
+
+        public void SetCategoryId(int id)
+        {
+            categoryId = id;
+        }
 
         #endregion
 

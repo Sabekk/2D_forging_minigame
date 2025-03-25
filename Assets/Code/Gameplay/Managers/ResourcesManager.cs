@@ -87,6 +87,15 @@ namespace Gameplay.Management.Resources
             }
         }
 
+        public bool CanHandleResource(int resourceDataId, int count)
+        {
+            ResourceInGame resource = resources.Find(x => x.ResourceData.IdEquals(resourceDataId));
+            if (resource == null)
+                return false;
+
+            return resource.CurrentValue >= count;
+        }
+
         private void CreateResources()
         {
             foreach (var resourceData in MainDatabases.Instance.ResourcesDatabase.Datas)
