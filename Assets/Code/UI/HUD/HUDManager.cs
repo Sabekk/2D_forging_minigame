@@ -9,6 +9,8 @@ namespace Gameplay.HUD
     {
         #region VARIABLES
 
+        public const string HUD_POOL_CATEGORY = "HUD";
+
         [SerializeField] private List<HUDBar> hudBars;
 
         #endregion
@@ -21,7 +23,10 @@ namespace Gameplay.HUD
 
         private void Start()
         {
-            AttachEvents();
+            if (GameplayManagersParent.Instance.Initialized == false)
+                AttachEvents();
+            else
+                HandleManagersInitialized();
         }
 
         private void OnDestroy()

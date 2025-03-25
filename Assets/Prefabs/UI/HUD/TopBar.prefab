@@ -399,8 +399,6 @@ MonoBehaviour:
   subElements:
   - {fileID: 6564682718842199088}
   - {fileID: 8497322170586619251}
-  activeEffects: {fileID: 0}
-  activeGlobalEffects: {fileID: 0}
 --- !u!1 &3061135431142415494
 GameObject:
   m_ObjectHideFlags: 0

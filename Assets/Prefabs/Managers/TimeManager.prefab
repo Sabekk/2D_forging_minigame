@@ -44,3 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdfd1e93bb3777e4f90233d1864a7f43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rareTickTime: 1
+  currentTime: 0
+  defaultTimeScale: 1

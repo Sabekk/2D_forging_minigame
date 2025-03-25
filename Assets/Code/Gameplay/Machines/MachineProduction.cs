@@ -11,8 +11,8 @@ namespace Gameplay.Machines
         #region VARIABLES
 
         [SerializeField] private int craftingItemId;
-        [SerializeField] private int produceTime;
-        [SerializeField] private int timeLeft;
+        [SerializeField] private float produceTime;
+        [SerializeField] private float timeLeft;
         [SerializeField] private float successChance;
 
         #endregion
@@ -20,8 +20,10 @@ namespace Gameplay.Machines
         #region PROPERTIES       
 
         public int CraftingItemId => craftingItemId;
-        public bool CraftingEnded => produceTime <= 0;
+        public bool CraftingEnded => timeLeft <= 0;
         public float SuccessChance => successChance;
+        public float PercentageProgress => produceTime <= 0 ? 100f : timeLeft / produceTime;
+        public float TimeLeft => timeLeft;
 
         #endregion
 
@@ -34,6 +36,7 @@ namespace Gameplay.Machines
 
             this.successChance = successChance;
             this.produceTime = produceTime;
+            timeLeft = produceTime;
         }
 
         #endregion
@@ -42,7 +45,7 @@ namespace Gameplay.Machines
 
         public void ProgressProduction()
         {
-            produceTime--;
+            timeLeft--;
         }
 
         #endregion

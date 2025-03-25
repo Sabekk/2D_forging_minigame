@@ -43,10 +43,10 @@ namespace Gameplay.Machines
             }
         }
 
-        public MachinesManager Manager => MachinesManager.Instance;
-
+        public MachineProduction CurrentProduction => currentProduction;
         public bool IsUnlocked => isUnlocked;
         public bool IsProducting => currentProduction != null;
+        public MachinesManager Manager => MachinesManager.Instance;
 
         #endregion
 

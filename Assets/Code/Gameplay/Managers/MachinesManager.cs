@@ -31,6 +31,8 @@ namespace Gameplay.Management.Machines
 
         #region PROPERTIES
 
+        public List<MachineInGame> MachinesInGame => machinesInGame;
+
         #endregion
 
         #region METHODS
