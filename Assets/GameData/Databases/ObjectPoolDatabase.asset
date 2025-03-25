@@ -37,3 +37,7 @@ MonoBehaviour:
         name: ItemSlot
         poolObject: {fileID: 1880907756863134937, guid: 093bcac243a0d424a86a8a954826d733, type: 3}
         size: 10
+      - id: 2146746689
+        name: ResourceSlot
+        poolObject: {fileID: 3083164972514208849, guid: 267a237f48214eb4b99b5bdfc664048e, type: 3}
+        size: 10

@@ -1270,6 +1270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   subWindows: []
   itemSlotPrefabId: 1092567322
+  resourceSlotPrefabId: 2146746689
   resourcesContainer: {fileID: 8608520086172846033}
   itemsContainer: {fileID: 7711251602599760674}
   defaultItemsSlots: 10

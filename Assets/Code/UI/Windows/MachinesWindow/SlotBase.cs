@@ -8,7 +8,7 @@ using TMPro;
 namespace UI.Window.Inventory
 {
     [RequireComponent(typeof(Button))]
-    public abstract class SlotBase : MonoBehaviour, IIdEqualable, IPoolable
+    public abstract class SlotBase : MonoBehaviour, IIdEqualable, IPoolable, IAttachableEvents
     {
         #region ACTIONS
 
@@ -31,14 +31,13 @@ namespace UI.Window.Inventory
 
         public int Id => presentId;
         public PoolObject Poolable { get; set; }
-        public bool HasItem => presentId > -1;
+        public bool HasItem => presentId != -1;
         public bool IsSelected { get; private set; }
 
         #endregion
 
         #region METHODS
 
-        public abstract void RemoveItem();
         public abstract void RefreshCountInSlot();
         protected abstract void SetIcon();
 
@@ -52,6 +51,22 @@ namespace UI.Window.Inventory
         {
             button.onClick.RemoveListener(HandleClickButton);
             SetSelected(false);
+            DetachEvents();
+        }
+        public virtual void RemoveItem()
+        {
+            SetSelected(false);
+            DetachEvents();
+        }
+
+        public virtual void AttachEvents()
+        {
+
+        }
+
+        public virtual void DetachEvents()
+        {
+
         }
 
         public void SetSelected(bool state)

@@ -1,8 +1,8 @@
-using Gameplay.Items;
+using Gameplay.Resources;
 
 namespace UI.Window.Inventory
 {
-    public class ItemSlot : SlotBase
+    public class ResourceSlot : SlotBase
     {
         #region ACTIONS
 
@@ -10,60 +10,60 @@ namespace UI.Window.Inventory
 
         #region VARIABLES
 
-        private ItemStackInGame itemStack;
+        private ResourceInGame resource;
 
         #endregion
 
         #region PROPERTIES
-        public ItemStackInGame ItemStack => itemStack;
+        public ResourceInGame Resource => resource;
 
         #endregion
 
         #region METHODS
 
-        public void SetItem(ItemStackInGame itemStack)
+        public void SetItem(ResourceInGame resource)
         {
-            this.itemStack = itemStack;
-            presentId = itemStack != null ? itemStack.Id : -1;
+            this.resource = resource;
+            presentId = resource != null ? resource.ResourceData.Id : -1;
             RefreshItemInSlot();
             RefreshCountInSlot();
             SetSelected(false);
-            AttachEvents();
         }
 
         public override void RemoveItem()
         {
             base.RemoveItem();
-            itemStack = null;
+
+            resource = null;
             RefreshItemInSlot();
         }
 
         public override void RefreshCountInSlot()
         {
-            if (itemStack == null)
+            if (resource == null)
                 countOfItems.gameObject.SetActive(false);
             else
             {
                 countOfItems.gameObject.SetActive(true);
-                countOfItems.SetText(itemStack.CountInStack.ToString());
+                countOfItems.SetText(resource.CurrentValue.ToString());
             }
         }
 
         public override void AttachEvents()
         {
             base.AttachEvents();
-            if (itemStack != null)
+            if (resource != null)
             {
-                itemStack.OnCountInStackChanged += RefreshCountInSlot;
+                resource.OnValueChanged += RefreshCountInSlot;
             }
         }
 
         public override void DetachEvents()
         {
             base.DetachEvents();
-            if (itemStack != null)
+            if (resource != null)
             {
-                itemStack.OnCountInStackChanged -= RefreshCountInSlot;
+                resource.OnValueChanged -= RefreshCountInSlot;
             }
         }
 
@@ -72,7 +72,7 @@ namespace UI.Window.Inventory
             if (HasItem)
             {
                 itemIcon.gameObject.SetActiveOptimize(true);
-                itemIcon.sprite = itemStack.Item.ItemData.Icon;
+                itemIcon.sprite = resource.ResourceData.Icon;
             }
             else
             {

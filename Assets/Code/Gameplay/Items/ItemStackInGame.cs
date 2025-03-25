@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,12 @@ namespace Gameplay.Items
 {
     public class ItemStackInGame : IIdEqualable
     {
+        #region ACTIONS
+
+        public event Action OnCountInStackChanged;
+
+        #endregion
+
         #region VARIABLES
 
         [SerializeField] private ItemInGame item;
@@ -39,13 +46,19 @@ namespace Gameplay.Items
         public void AddItemToStack(ItemInGame item, int count = 1)
         {
             if (this.item.ItemData.IdEquals(item.ItemData.Id))
+            {
                 countInStack += count;
+                OnCountInStackChanged?.Invoke();
+            }
         }
 
         public void RemoveItemFromStack(int count = 1)
         {
             if (this.item.ItemData.IdEquals(item.ItemData.Id))
+            {
                 countInStack -= count;
+                OnCountInStackChanged?.Invoke();
+            }
         }
 
         public bool IdEquals(int id)
