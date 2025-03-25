@@ -22,51 +22,61 @@ MonoBehaviour:
       icon: {fileID: 21300000, guid: ee49b3c4b227aed40bbe832d71f278d4, type: 3}
       canSell: 1
       sellValue: 20
+      effectsWhileOwnInInventory: []
     - id: -1663973878
       dataName: Steel Ingot
       icon: {fileID: 21300000, guid: d9505c7e21485b346a7aa5f075af2b47, type: 3}
       canSell: 1
       sellValue: 15
+      effectsWhileOwnInInventory: []
     - id: -425650037
       dataName: Gold Ingot
       icon: {fileID: 21300000, guid: 8e7b9c760bcc6eb458144a11bf1114f2, type: 3}
       canSell: 1
       sellValue: 20
+      effectsWhileOwnInInventory: []
     - id: 797515009
       dataName: Flame-Gold Ingot
       icon: {fileID: 21300000, guid: ae6935bfeae600a4e86168580edf0153, type: 3}
       canSell: 1
       sellValue: 30
+      effectsWhileOwnInInventory: []
     - id: -548124167
       dataName: Ember Blade
       icon: {fileID: 21300000, guid: 86a1b8aba7b814143923293f28232e05, type: 3}
       canSell: 1
       sellValue: 50
+      effectsWhileOwnInInventory: []
     - id: 1977560023
       dataName: Draconic Shield
       icon: {fileID: 21300000, guid: a9766cccd634ef34da7a51c0bd848b5b, type: 3}
       canSell: 1
       sellValue: 50
+      effectsWhileOwnInInventory: []
     - id: -162212129
       dataName: Radiant Staff
       icon: {fileID: 21300000, guid: e8ffa52f65d4cf14c942fce124f5f42c, type: 3}
       canSell: 1
       sellValue: 50
+      effectsWhileOwnInInventory: []
     - id: -501431467
       dataName: Enhanced Ember Blade
       icon: {fileID: 21300000, guid: ab06b44af60ef1d49a52bcf83aed646e, type: 3}
       canSell: 1
       sellValue: 100
+      effectsWhileOwnInInventory: []
     - id: -196075705
       dataName: Enhanced Radiant Staff
       icon: {fileID: 21300000, guid: e4a50a2f4451b274b8d51ecbe8043c72, type: 3}
       canSell: 1
       sellValue: 100
+      effectsWhileOwnInInventory: []
     - id: -908305768
       dataName: Draconic Crown
       icon: {fileID: 21300000, guid: 844fe3ff3abe6db45848fe98183084c7, type: 3}
       canSell: 1
       sellValue: 100
+      effectsWhileOwnInInventory: []
   - id: -35643410
     dataName: Special items
     canBeCrafted: 0
@@ -76,8 +86,37 @@ MonoBehaviour:
       icon: {fileID: 21300000, guid: d27ae2b62946a3d4cb5a4abfd959733c, type: 3}
       canSell: 0
       sellValue: 0
+      effectsWhileOwnInInventory:
+      - rid: 1857872859721891843
     - id: -1149991110
       dataName: Time Amulet
       icon: {fileID: 21300000, guid: 8fff42e2e7dfb804fba5b229cd0aed7f, type: 3}
       canSell: 0
       sellValue: 0
+      effectsWhileOwnInInventory:
+      - rid: 1857872859721891844
+  references:
+    version: 2
+    RefIds:
+    - rid: 1857872859721891843
+      type: {class: AddModifierToPlayerValues, ns: Gameplay.Effects, asm: Assembly-CSharp}
+      data:
+        id: 151774841
+        effectName: Increases success rate by 10 percentage points
+        effectType: 0
+        isStackable: 0
+        timeLimit: 0
+        valueName: AdditionalSuccessChance
+        additionalValue: 10
+        valueType: 0
+    - rid: 1857872859721891844
+      type: {class: AddModifierToPlayerValues, ns: Gameplay.Effects, asm: Assembly-CSharp}
+      data:
+        id: 1023938679
+        effectName: Reduces crafting time by 2 seconds
+        effectType: 0
+        isStackable: 0
+        timeLimit: 0
+        valueName: AdditionalProductionSpeed
+        additionalValue: 2
+        valueType: 0

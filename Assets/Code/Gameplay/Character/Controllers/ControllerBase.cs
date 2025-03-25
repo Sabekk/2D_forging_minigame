@@ -39,6 +39,7 @@ namespace Gameplay.Character.Controller
             modules.ForEach(c => c.Initialize(character));
         }
 
+        public virtual void SetStartingData()=> modules.ForEach(c => c.SetStartingData());
         public virtual void CleanUp() => modules.ForEach(c => c.CleanUp());
 
         public virtual void OnUpdate() => modules.ForEach(c => c.OnUpdate());

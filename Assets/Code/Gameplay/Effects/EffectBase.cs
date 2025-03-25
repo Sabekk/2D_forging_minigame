@@ -1,11 +1,10 @@
 using Sirenix.OdinInspector;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Gameplay.Effects
 {
+    [Serializable]
     public abstract class EffectBase : IIdEqualable
     {
         #region VARIABLES

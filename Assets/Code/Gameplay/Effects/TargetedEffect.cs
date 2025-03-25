@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Gameplay.Effects
 {
+    [Serializable]
     public abstract class TargetedEffect<IEffectable> : EffectBase
     {
         #region VARIABLES

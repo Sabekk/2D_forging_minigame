@@ -17,11 +17,9 @@ namespace Gameplay.Character.Controller.Inventory
         #endregion
 
         #region METHODS
-
-        public override void Initialize(CharacterInGame character)
+        public override void SetStartingData()
         {
-            base.Initialize(character);
-
+            base.SetStartingData();
             inventoryModule.SetStartingItems();
         }
 

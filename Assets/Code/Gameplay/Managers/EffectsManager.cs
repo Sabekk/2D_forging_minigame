@@ -23,7 +23,7 @@ namespace Gameplay.Management.Effects
 
         [SerializeField] private EffectsStack globalStack;
         [SerializeField] private Dictionary<IEffectable, EffectsStack> effectStack;
-        [SerializeReference, FoldoutGroup("Debug")] private PlayerEffect debugPlayerEffect;
+        [SerializeReference, FoldoutGroup("Debug")] private CharacterEffect debugPlayerEffect;
         [SerializeReference, FoldoutGroup("Debug")] private GlobalEffect debugGlobalEffect;
 
         #endregion
@@ -254,7 +254,7 @@ namespace Gameplay.Management.Effects
             if (CharacterManager.Instance == null)
                 return;
 
-            ExecuteEffect(debugPlayerEffect, CharacterManager.Instance.Player);
+            ExecuteEffect(debugPlayerEffect, CharacterManager.Instance.PlayerCharacter);
         }
 
         [Button, FoldoutGroup("Debug")]
@@ -266,10 +266,8 @@ namespace Gameplay.Management.Effects
             if (CharacterManager.Instance == null)
                 return;
 
-            RemoveEffect(debugPlayerEffect, CharacterManager.Instance.Player);
+            RemoveEffect(debugPlayerEffect, CharacterManager.Instance.PlayerCharacter);
         }
-
-
 
         [Button, FoldoutGroup("Debug")]
         private void TryAddGlobalEffect()

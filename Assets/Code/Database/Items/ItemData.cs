@@ -1,26 +1,23 @@
+using Gameplay.Effects;
 using Sirenix.OdinInspector;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Database.Items
 {
     [Serializable]
-    public class ItemData : BaseDataOfDatabase
+    public class ItemData : ItemBaseData
     {
         #region VARIABLES
 
-        [SerializeField, FoldoutGroup("Base setting")] protected Sprite icon;
-        [SerializeField, FoldoutGroup("Sell setting")] protected bool canSell;
-        [SerializeField, FoldoutGroup("Sell setting"), ShowIf(nameof(canSell))] protected int sellValue;
-
+        [SerializeReference] private List<CharacterEffect> effectsWhileOwnInInventory;
 
         #endregion
 
         #region PROPERTIES
 
-        public int SellValue => sellValue;
-        public Sprite Icon => icon;
-        public bool CanBeSelled => canSell;
+        public List<CharacterEffect> EffectsWhileOwnInInventory => effectsWhileOwnInInventory;
 
         #endregion
 

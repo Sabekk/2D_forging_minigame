@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Database.Resources
 {
     [Serializable]
-    public class ResourceData : ItemData
+    public class ResourceData : ItemBaseData
     {
         #region VARIABLES
 

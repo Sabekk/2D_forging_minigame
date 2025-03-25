@@ -27,15 +27,7 @@ namespace Gameplay.Character.Controller.Inventory
 
         #region PROPERTIES
 
-        public List<ItemStackInGame> ItemStacks
-        {
-            get
-            {
-                if (itemStacks == null)
-                    itemStacks = new();
-                return itemStacks;
-            }
-        }
+        public List<ItemStackInGame> ItemStacks => itemStacks ??= new();
 
         #endregion
 
@@ -64,6 +56,15 @@ namespace Gameplay.Character.Controller.Inventory
                 stack.AddItemToStack(item);
 
             OnItemCollected?.Invoke(item);
+        }
+
+        public void RemoveItem(int itemDataId, int count = 1)
+        {
+            ItemStackInGame stack = itemStacks.Find(x => x.Item.ItemData.IdEquals(itemDataId));
+            if (stack == null)
+                return;
+
+            RemoveItem(stack.Item, count);
         }
 
         public void RemoveItem(ItemInGame item, int count = 1)

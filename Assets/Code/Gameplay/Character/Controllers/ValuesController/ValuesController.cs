@@ -23,8 +23,13 @@ namespace Gameplay.Character.Controller.Values
         {
             base.Initialize(character);
             characterValues = new CharacterValues();
+        }
+
+        public override void SetStartingData()
+        {
+            base.SetStartingData();
             characterValues.Initialze();
-            characterValues.SetStartingValues<CharacterStartingValue, CharacterValues>(character.Data.StartingValues);
+            characterValues.SetStartingValues<CharacterStartingValue, CharacterValues>(Character.Data.StartingValues);
         }
 
         #endregion

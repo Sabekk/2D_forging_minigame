@@ -65,22 +65,14 @@ namespace Gameplay.Character
             CleanUpControllers();
         }
 
+        public void SetStartingData() => controllers.ForEach(m => m.SetStartingData());
+        public void AttachEvents()=> AttachControllers();
+        public void DetachEvents() => DetachControllers();
 
         public void SetData(CharacterData data)
         {
             dataId = data.Id;
             this.data = data;
-        }
-
-
-        public void AttachEvents()
-        {
-            AttachControllers();
-        }
-
-        public void DetachEvents()
-        {
-            DetachControllers();
         }
 
         protected virtual void CreateControllers()
@@ -99,11 +91,8 @@ namespace Gameplay.Character
             controllers.Add(effectsController);
         }
         protected void CleanUpControllers() => controllers.ForEach(m => m.CleanUp());
-
         private void InitializeControllers() => controllers.ForEach(m => m.Initialize(this));
-
         private void AttachControllers() => controllers.ForEach(m => m.AttachEvents());
-
         private void DetachControllers() => controllers.ForEach(m => m.DetachEvents());
 
         #endregion

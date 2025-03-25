@@ -23,6 +23,7 @@ namespace Gameplay.Character.Controller.Module
             this.character = character;
         }
 
+        public virtual void SetStartingData() { }
         public virtual void CleanUp() { }
 
         public virtual void OnUpdate() { }

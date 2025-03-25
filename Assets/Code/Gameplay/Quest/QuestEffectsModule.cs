@@ -1,3 +1,4 @@
+using Gameplay.Character;
 using Gameplay.Management.Characters;
 using Gameplay.Management.Effects;
 using Gameplay.Management.Quests;
@@ -54,12 +55,12 @@ namespace Gameplay.Quests
                 if (positiveEffects)
                 {
                     builder.AppendLine(EffectsManager.Instance.GetEffectsDescription(QuestInGame.Data.GlobalRewards));
-                    builder.AppendLine(EffectsManager.Instance.GetEffectsDescription(QuestInGame.Data.PlayerRewards, CharacterManager.Instance.Player));
+                    builder.AppendLine(EffectsManager.Instance.GetEffectsDescription(QuestInGame.Data.PlayerRewards, CharacterManager.Instance.PlayerCharacter));
                 }
                 else
                 {
                     builder.AppendLine(EffectsManager.Instance.GetEffectsDescription(QuestInGame.Data.GlobalPenalty));
-                    builder.AppendLine(EffectsManager.Instance.GetEffectsDescription(QuestInGame.Data.PlayerPenalty, CharacterManager.Instance.Player));
+                    builder.AppendLine(EffectsManager.Instance.GetEffectsDescription(QuestInGame.Data.PlayerPenalty, CharacterManager.Instance.PlayerCharacter));
                 }
 
             }
@@ -74,7 +75,7 @@ namespace Gameplay.Quests
                 EffectsManager.Instance.ExecuteEffects(QuestInGame.Data.GlobalRewards);
 
                 if (CharacterManager.Instance)
-                    EffectsManager.Instance.ExecuteEffects(QuestInGame.Data.PlayerRewards, CharacterManager.Instance.Player);
+                    EffectsManager.Instance.ExecuteEffects(QuestInGame.Data.PlayerRewards, CharacterManager.Instance.PlayerCharacter);
             }
         }
 
@@ -87,7 +88,7 @@ namespace Gameplay.Quests
                 EffectsManager.Instance.ExecuteEffects(QuestInGame.Data.GlobalPenalty);
 
                 if (CharacterManager.Instance)
-                    EffectsManager.Instance.ExecuteEffects(QuestInGame.Data.PlayerPenalty, CharacterManager.Instance.Player);
+                    EffectsManager.Instance.ExecuteEffects(QuestInGame.Data.PlayerPenalty, CharacterManager.Instance.PlayerCharacter);
             }
         }
 

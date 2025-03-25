@@ -3,6 +3,7 @@ using Database.Items;
 using Gameplay.Character;
 using Gameplay.Items;
 using Gameplay.Management.Characters;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Gameplay.Management.Items
@@ -10,6 +11,8 @@ namespace Gameplay.Management.Items
     public class ItemsManager : GameplayManager<ItemsManager>
     {
         #region VARIABLES
+
+        [SerializeField, FoldoutGroup("Debug"), ValueDropdown(ItemsDatabase.GET_NON_CRAFTABLE_ITEM_DATA_METHOD)] private int debugIdItem;
 
         #endregion
 
@@ -40,6 +43,34 @@ namespace Gameplay.Management.Items
                 return;
 
             character.InventoryController.InventoryModule.CollectItem(item, itemCount);
+        }
+
+        public void RemoveItem(int itemDataId, CharacterInGame character, int countToRemove = 1)
+        {
+            character.InventoryController.InventoryModule.RemoveItem(itemDataId, countToRemove);
+        }
+
+        public void RemoveItem(ItemInGame item, CharacterInGame character, int countToRemove = 1)
+        {
+            character.InventoryController.InventoryModule.RemoveItem(item, countToRemove);
+        }
+
+        [Button, FoldoutGroup("Debug")]
+        private void AddDebugItem()
+        {
+            if (CharacterManager.Instance == null)
+                return;
+
+            AddItemToCharacter(debugIdItem, CharacterManager.Instance.Player, 1);
+        }
+
+        [Button, FoldoutGroup("Debug")]
+        private void RemoveDebugItem()
+        {
+            if (CharacterManager.Instance == null)
+                return;
+
+            RemoveItem(debugIdItem, CharacterManager.Instance.Player, 1);
         }
 
         #endregion

@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Gameplay.Effects
 {
-    public class AddModifierToPlayerValues : PlayerEffect
+    public class AddModifierToPlayerValues : CharacterEffect
     {
         #region VARIABLES
 
@@ -22,7 +22,7 @@ namespace Gameplay.Effects
 
         #region METHODS
 
-        public override void ExecuteEffect(PlayerInGame target)
+        public override void ExecuteEffect(CharacterInGame target)
         {
             base.ExecuteEffect(target);
             if (target == null)
@@ -40,7 +40,7 @@ namespace Gameplay.Effects
             value.AddModifier(modifier);
         }
 
-        public override void RemoveEffect(PlayerInGame target)
+        public override void RemoveEffect(CharacterInGame target)
         {
             base.RemoveEffect(target);
             if (target == null)

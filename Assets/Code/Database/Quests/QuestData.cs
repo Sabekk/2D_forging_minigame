@@ -18,8 +18,8 @@ namespace Database.Quests
 
         [SerializeReference] private List<GlobalEffect> globalRewards;
         [SerializeReference] private List<GlobalEffect> globalPenalty;
-        [SerializeReference] private List<PlayerEffect> playerRewards;
-        [SerializeReference] private List<PlayerEffect> playerPenalty;
+        [SerializeReference] private List<CharacterEffect> playerRewards;
+        [SerializeReference] private List<CharacterEffect> playerPenalty;
 
         #endregion
 
@@ -30,8 +30,8 @@ namespace Database.Quests
         public List<QuestObjectiveBase> ObjectivesData => objectivesData;
         public List<GlobalEffect> GlobalRewards => globalRewards;
         public List<GlobalEffect> GlobalPenalty => globalPenalty;
-        public List<PlayerEffect> PlayerRewards => playerRewards;
-        public List<PlayerEffect> PlayerPenalty => playerPenalty;
+        public List<CharacterEffect> PlayerRewards => playerRewards;
+        public List<CharacterEffect> PlayerPenalty => playerPenalty;
 
         #endregion
 

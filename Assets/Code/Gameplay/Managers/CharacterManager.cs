@@ -17,12 +17,29 @@ namespace Gameplay.Management.Characters
         [SerializeField] private List<CharacterInGame> characters = new();
         private Dictionary<CharacterInGame, bool> charactersTmp = new();
 
+        private CharacterInGame playerCharacter;
+
         #endregion
 
         #region PROPERTIES
 
+        public CharacterInGame PlayerCharacter
+        {
+            get
+            {
+                if (playerCharacter == null)
+                    playerCharacter = Player;
+                return playerCharacter;
+            }
+            set
+            {
+                playerCharacter = value;
+            }
+        }
+
         [ShowInInspector, ReadOnly]
         public PlayerInGame Player
+
         {
             get
             {
@@ -102,6 +119,7 @@ namespace Gameplay.Management.Characters
             character.SetData(data);
             character.Initialize();
             character.AttachEvents();
+            character.SetStartingData();
 
             return character;
         }

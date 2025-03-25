@@ -10,22 +10,13 @@ namespace Gameplay.Management.Effects
         #region VARIABLES
 
         [SerializeField] private List<EffectBase> constEffects;
-        //TODO Add limited effects
+        //TODO Add limited by time effects
 
         #endregion
 
         #region PROPERTIES
 
-        public List<EffectBase> ConstEffects
-        {
-            get
-            {
-                if (constEffects == null)
-                    constEffects = new();
-                return constEffects;
-            }
-        }
-
+        public List<EffectBase> ConstEffects => constEffects ??= new();
         public bool ShouldBeRemoved => ConstEffects.Count == 0;
 
         #endregion
