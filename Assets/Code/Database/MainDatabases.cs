@@ -4,6 +4,7 @@ using Database.Machines;
 using Database.Quests;
 using Database.Recipes;
 using Database.Resources;
+using ObjectPooling;
 using System;
 using System.Reflection;
 using UnityEngine;
@@ -21,6 +22,7 @@ namespace Database
         [SerializeField] private MachinesDatabase machinesDatabase;
         [SerializeField] private QuestsDatabase questsDatabase;
         [SerializeField] private CharactersDatabase charactersDatabase;
+        [SerializeField] private ObjectPoolDatabase objectPoolDatabase;
 
         #endregion
 
@@ -35,6 +37,7 @@ namespace Database
         public MachinesDatabase MachinesDatabase => machinesDatabase;
         public QuestsDatabase QuestsDatabase => questsDatabase;
         public CharactersDatabase CharactersDatabase => charactersDatabase;
+        public ObjectPoolDatabase ObjectPoolDatabase => objectPoolDatabase;
 
         #endregion
 

@@ -18,3 +18,4 @@ MonoBehaviour:
   machinesDatabase: {fileID: 11400000, guid: 255e1781a07639d4191c2775eb4aa79f, type: 2}
   questsDatabase: {fileID: 11400000, guid: d263032001e2d99428d93a45e5cc5311, type: 2}
   charactersDatabase: {fileID: 11400000, guid: 4e045171bd7a46f44ab72e870a3aba4f, type: 2}
+  objectPoolDatabase: {fileID: 11400000, guid: 1089ea6fdcb6a814391dd4144520a43a, type: 2}
