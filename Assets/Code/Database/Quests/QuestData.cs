@@ -16,7 +16,10 @@ namespace Database.Quests
         [SerializeField, FoldoutGroup("Base setting"), ShowIf(nameof(hasLimitedTime)), SuffixLabel("seconds")] private int limitedTime;
         [SerializeReference, FoldoutGroup("Objective setting")] List<QuestObjectiveBase> objectivesData;
 
-        [SerializeReference] private EffectBase effect;
+        [SerializeReference] private List<GlobalEffect> globalRewards;
+        [SerializeReference] private List<GlobalEffect> globalPenalty;
+        [SerializeReference] private List<PlayerEffect> playerRewards;
+        [SerializeReference] private List<PlayerEffect> playerPenalty;
 
         #endregion
 
@@ -25,6 +28,10 @@ namespace Database.Quests
         public bool HasLimitedTime => hasLimitedTime;
         public int LimitedTime => limitedTime;
         public List<QuestObjectiveBase> ObjectivesData => objectivesData;
+        public List<GlobalEffect> GlobalRewards => globalRewards;
+        public List<GlobalEffect> GlobalPenalty => globalPenalty;
+        public List<PlayerEffect> PlayerRewards => playerRewards;
+        public List<PlayerEffect> PlayerPenalty => playerPenalty;
 
         #endregion
 

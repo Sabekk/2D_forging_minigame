@@ -21,7 +21,6 @@ namespace Gameplay.Management.Quests
         #region VARIABLES
 
         [SerializeField, ValueDropdown(QuestsDatabase.GET_QUESTS_DATA_METHOD)] private List<int> debugQuests;
-
         [SerializeField] private List<QuestInGame> allQuests;
 
         #endregion

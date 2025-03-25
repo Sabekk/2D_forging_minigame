@@ -12,6 +12,7 @@ namespace Gameplay.Management.Unlocks
         #region ACTIONS
 
         public event Action<int> OnUnlockedId;
+        public event Action<int> OnLockedId;
 
         #endregion
 
@@ -43,6 +44,15 @@ namespace Gameplay.Management.Unlocks
             {
                 UnlockedIds.Add(id);
                 OnUnlockedId?.Invoke(id);
+            }
+        }
+
+        public void LockId(int id)
+        {
+            if (InUnlocked(id) == true)
+            {
+                UnlockedIds.Remove(id);
+                OnLockedId?.Invoke(id);
             }
         }
 

@@ -318,6 +318,78 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 216280857}
     m_Modifications:
+    - target: {fileID: 1472984650303784805, guid: c267a6954840d754e8c813359fe98709, type: 3}
+      propertyPath: debugGlobalEffect
+      value: 1857872859721891842
+      objectReference: {fileID: 0}
+    - target: {fileID: 1472984650303784805, guid: c267a6954840d754e8c813359fe98709, type: 3}
+      propertyPath: debugPlayerEffect
+      value: 1857872859721891841
+      objectReference: {fileID: 0}
+    - target: {fileID: 1472984650303784805, guid: c267a6954840d754e8c813359fe98709, type: 3}
+      propertyPath: managedReferences[1857872859721891841]
+      value: Assembly-CSharp Gameplay.Effects.AddModifierToPlayerValues
+      objectReference: {fileID: 0}
+    - target: {fileID: 1472984650303784805, guid: c267a6954840d754e8c813359fe98709, type: 3}
+      propertyPath: managedReferences[1857872859721891842]
+      value: Assembly-CSharp Gameplay.Effects.UnlockMachineEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 1472984650303784805, guid: c267a6954840d754e8c813359fe98709, type: 3}
+      propertyPath: managedReferences[1857872859721891841].id
+      value: 33202437
+      objectReference: {fileID: 0}
+    - target: {fileID: 1472984650303784805, guid: c267a6954840d754e8c813359fe98709, type: 3}
+      propertyPath: managedReferences[1857872859721891842].id
+      value: -851662156
+      objectReference: {fileID: 0}
+    - target: {fileID: 1472984650303784805, guid: c267a6954840d754e8c813359fe98709, type: 3}
+      propertyPath: managedReferences[1857872859721891841].timeLimit
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1472984650303784805, guid: c267a6954840d754e8c813359fe98709, type: 3}
+      propertyPath: managedReferences[1857872859721891841].valueName
+      value: AdditionalProductionSpeed
+      objectReference: {fileID: 0}
+    - target: {fileID: 1472984650303784805, guid: c267a6954840d754e8c813359fe98709, type: 3}
+      propertyPath: managedReferences[1857872859721891841].valueType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1472984650303784805, guid: c267a6954840d754e8c813359fe98709, type: 3}
+      propertyPath: managedReferences[1857872859721891842].timeLimit
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1472984650303784805, guid: c267a6954840d754e8c813359fe98709, type: 3}
+      propertyPath: managedReferences[1857872859721891841].effectName
+      value: Test
+      objectReference: {fileID: 0}
+    - target: {fileID: 1472984650303784805, guid: c267a6954840d754e8c813359fe98709, type: 3}
+      propertyPath: managedReferences[1857872859721891841].effectType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1472984650303784805, guid: c267a6954840d754e8c813359fe98709, type: 3}
+      propertyPath: managedReferences[1857872859721891842].effectName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1472984650303784805, guid: c267a6954840d754e8c813359fe98709, type: 3}
+      propertyPath: managedReferences[1857872859721891842].effectType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1472984650303784805, guid: c267a6954840d754e8c813359fe98709, type: 3}
+      propertyPath: managedReferences[1857872859721891841].isStackable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1472984650303784805, guid: c267a6954840d754e8c813359fe98709, type: 3}
+      propertyPath: managedReferences[1857872859721891842].isStackable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1472984650303784805, guid: c267a6954840d754e8c813359fe98709, type: 3}
+      propertyPath: managedReferences[1857872859721891841].additionalValue
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1472984650303784805, guid: c267a6954840d754e8c813359fe98709, type: 3}
+      propertyPath: managedReferences[1857872859721891842].unlockMachineId
+      value: -1420275462
+      objectReference: {fileID: 0}
     - target: {fileID: 2896793970348944314, guid: c267a6954840d754e8c813359fe98709, type: 3}
       propertyPath: allQuests.Array.size
       value: 0

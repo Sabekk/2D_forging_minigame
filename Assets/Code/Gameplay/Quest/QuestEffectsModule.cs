@@ -1,4 +1,7 @@
+using Gameplay.Management.Characters;
+using Gameplay.Management.Effects;
 using Gameplay.Management.Quests;
+using System.Text;
 using UnityEngine;
 
 namespace Gameplay.Quests
@@ -41,19 +44,51 @@ namespace Gameplay.Quests
         #endregion
 
         #region METHODS
+
         public string GetEffectsDescription(bool positiveEffects)
         {
-            return "";
+            StringBuilder builder = new();
+
+            if (EffectsManager.Instance)
+            {
+                if (positiveEffects)
+                {
+                    builder.AppendLine(EffectsManager.Instance.GetEffectsDescription(QuestInGame.Data.GlobalRewards));
+                    builder.AppendLine(EffectsManager.Instance.GetEffectsDescription(QuestInGame.Data.PlayerRewards, CharacterManager.Instance.Player));
+                }
+                else
+                {
+                    builder.AppendLine(EffectsManager.Instance.GetEffectsDescription(QuestInGame.Data.GlobalPenalty));
+                    builder.AppendLine(EffectsManager.Instance.GetEffectsDescription(QuestInGame.Data.PlayerPenalty, CharacterManager.Instance.Player));
+                }
+
+            }
+            return builder.ToString();
         }
 
         public void HandleTaskCompleted()
         {
-            //TODO Positive effects
+            //TODO Add targets of effects
+            if (EffectsManager.Instance)
+            {
+                EffectsManager.Instance.ExecuteEffects(QuestInGame.Data.GlobalRewards);
+
+                if (CharacterManager.Instance)
+                    EffectsManager.Instance.ExecuteEffects(QuestInGame.Data.PlayerRewards, CharacterManager.Instance.Player);
+            }
         }
 
         public void HandleTaskFailed()
         {
-            //TODO Negative effects
+            //TODO Add targets of effects
+
+            if (EffectsManager.Instance)
+            {
+                EffectsManager.Instance.ExecuteEffects(QuestInGame.Data.GlobalPenalty);
+
+                if (CharacterManager.Instance)
+                    EffectsManager.Instance.ExecuteEffects(QuestInGame.Data.PlayerPenalty, CharacterManager.Instance.Player);
+            }
         }
 
         #endregion
