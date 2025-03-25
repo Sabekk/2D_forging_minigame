@@ -19,15 +19,21 @@ MonoBehaviour:
     limitedTime: 0
     objectivesData:
     - rid: 1857872837541101568
+    effect:
+      rid: 1857872859721891840
   - id: -770296830
     dataName: Elemental
     hasLimitedTime: 0
     limitedTime: 0
     objectivesData:
     - rid: 1857872837541101569
+    effect:
+      rid: -2
   references:
     version: 2
     RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
     - rid: 1857872837541101568
       type: {class: QuestObjective_CraftItems, ns: Gameplay.Quests, asm: Assembly-CSharp}
       data:
@@ -54,3 +60,7 @@ MonoBehaviour:
         currentValue: 0
         timeLeft: 0
         targetItemDataId: -548124167
+    - rid: 1857872859721891840
+      type: {class: ModifyPlayerValues, ns: Gameplay.Effects, asm: Assembly-CSharp}
+      data:
+        name: AdditionalProductionSpeed

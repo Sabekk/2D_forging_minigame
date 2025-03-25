@@ -1,3 +1,4 @@
+using Gameplay.Effects;
 using Gameplay.Quests;
 using Sirenix.OdinInspector;
 using System;
@@ -15,7 +16,7 @@ namespace Database.Quests
         [SerializeField, FoldoutGroup("Base setting"), ShowIf(nameof(hasLimitedTime)), SuffixLabel("seconds")] private int limitedTime;
         [SerializeReference, FoldoutGroup("Objective setting")] List<QuestObjectiveBase> objectivesData;
 
-        //TODO Effects
+        [SerializeReference] private EffectBase effect;
 
         #endregion
 

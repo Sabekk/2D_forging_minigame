@@ -50,7 +50,7 @@ namespace Gameplay.Values
         #region CONSTRUCTORS
 
         public ModifiableValue() { }
-        public ModifiableValue(float startingValue, ValueType valueType = ValueType.OVERALL) : base(startingValue, valueType)
+        public ModifiableValue(string valueName, float startingValue, ValueType valueType = ValueType.OVERALL) : base(valueName, startingValue, valueType)
         {
             additionalComponents = new();
             modifiers = new();
@@ -98,6 +98,13 @@ namespace Gameplay.Values
 
             if (modifier.Value != 0)
                 ForceRefreshValue();
+        }
+
+        public void RemoveModifier(int effectId)
+        {
+            Modifier modifier = modifiers.Find(x => x.EffectId == effectId);
+            if (modifier != null)
+                RemoveModifier(modifier);
         }
 
         public void RemoveModifier(Modifier modifier)

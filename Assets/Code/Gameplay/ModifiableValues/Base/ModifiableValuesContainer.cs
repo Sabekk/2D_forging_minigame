@@ -4,6 +4,9 @@ using System.Reflection;
 using UnityEngine;
 using System;
 using Gameplay.Values;
+using Sirenix.OdinInspector;
+using System.Linq;
+using JetBrains.Annotations;
 
 namespace ModifiableValues
 {
@@ -47,7 +50,7 @@ namespace ModifiableValues
             }
         }
 
-        public void SetStartingValues<T1, T2>(List<T1> startingValues) where T1: StartingValue<T2> where T2: ModifiableValuesContainer
+        public void SetStartingValues<T1, T2>(List<T1> startingValues) where T1 : StartingValue<T2> where T2 : ModifiableValuesContainer
         {
             foreach (var startingValue in startingValues)
                 SetStartingValue<T1, T2>(startingValue);
@@ -70,6 +73,16 @@ namespace ModifiableValues
             if (allValues.TryGetValue(valueId, out ModifiableValue value))
                 return value;
             return null;
+        }
+
+        [UsedImplicitly]
+        public static IList<ValueDropdownItem<string>> GetAllValuesDropdown<T>()
+        {
+            List<ValueDropdownItem<string>> dropdownSet = new();
+            PropertyInfo[] properties = typeof(T).GetProperties();
+            foreach (var property in properties)
+                dropdownSet.Add(new ValueDropdownItem<string>(property.Name, property.Name));
+            return dropdownSet;
         }
 
         #endregion

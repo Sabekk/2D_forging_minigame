@@ -6,6 +6,7 @@ namespace Gameplay.Values
     {
         #region VARIABLES
 
+        [SerializeField] private string valueName;
         [SerializeField] private float rawValue;
         [SerializeField] private float convertedValue;
         [SerializeField] private ValueType valueType;
@@ -14,6 +15,7 @@ namespace Gameplay.Values
 
         #region PROPERTIES
 
+        public string ValueName => valueName;
         /// <summary>
         /// Converted value to type
         /// </summary>
@@ -34,8 +36,9 @@ namespace Gameplay.Values
         #region CONSTRUCTORS
 
         public ValueBase() { }
-        public ValueBase(float value, ValueType valueType)
+        public ValueBase(string valueName, float value, ValueType valueType)
         {
+            this.valueName = valueName;
             this.valueType = valueType;
             rawValue = value;
             convertedValue = ConvertValueToType(rawValue);

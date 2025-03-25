@@ -24,7 +24,6 @@ namespace Gameplay.Values
 
         #endregion
 
-
         #region METHODS
 
         public List<string> GetAllModifiableNamesFromContainer()

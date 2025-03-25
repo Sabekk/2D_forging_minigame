@@ -10,7 +10,7 @@ using UnityEngine;
 
 namespace Gameplay.Character
 {
-    public class CharacterInGame : IAttachableEvents
+    public class CharacterInGame : IAttachableEvents, IEffectable
     {
         #region VARIABLES
 
