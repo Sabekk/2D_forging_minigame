@@ -8,6 +8,8 @@ using Database.Machines;
 using Gameplay.Machines;
 using Gameplay.Management.Machines;
 using ObjectPooling;
+using Gameplay.Management.UI;
+using UI.Window.Machines;
 
 namespace Gameplay.HUD
 {
@@ -15,6 +17,8 @@ namespace Gameplay.HUD
     public class MachineButton : MonoBehaviour, IPoolable
     {
         #region VARIABLES
+
+        [SerializeField, ValueDropdown(ObjectPoolDatabase.GET_POOL_UI_WINDOW_METHOD)] private int windowId;
 
         [SerializeField] private Button button;
         [SerializeField] private Image mainIcon;
@@ -136,7 +140,7 @@ namespace Gameplay.HUD
 
         public void HandleButtonClick()
         {
-
+            UIManager.Instance.OpenWindow<MachinesWindow>(windowId);
         }
 
         #endregion

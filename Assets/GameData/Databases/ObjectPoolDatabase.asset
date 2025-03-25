@@ -22,3 +22,18 @@ MonoBehaviour:
         name: HUD_MachineButton
         poolObject: {fileID: 2003110075071629793, guid: 5abca3abedfe7994197ab430e763ccb1, type: 3}
         size: 5
+  - id: 1587452996
+    categoryName: UIWindows
+    groups:
+    - groupName: Windows
+      instances:
+      - id: -1501138063
+        name: MachinesWindow
+        poolObject: {fileID: 4702095661043245953, guid: 36ccc5dd9583f2d4aad60bcf46951657, type: 3}
+        size: 1
+    - groupName: Slots
+      instances:
+      - id: 1092567322
+        name: ItemSlot
+        poolObject: {fileID: 1880907756863134937, guid: 093bcac243a0d424a86a8a954826d733, type: 3}
+        size: 10

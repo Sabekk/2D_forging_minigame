@@ -5,6 +5,7 @@ using Gameplay.Management.Machines;
 using Gameplay.Management.Quests;
 using Gameplay.Management.Resources;
 using Gameplay.Management.Timing;
+using Gameplay.Management.UI;
 using Gameplay.Management.Unlocks;
 
 namespace Gameplay.Management
@@ -31,6 +32,7 @@ namespace Gameplay.Management
             managers.Add(MachinesManager.Instance);
             managers.Add(ItemsManager.Instance);
             managers.Add(QuestsManager.Instance);
+            managers.Add(UIManager.Instance);
         }
 
         #endregion

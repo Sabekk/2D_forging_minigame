@@ -153,8 +153,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 519420032}
-  - {fileID: 5420411095198049596}
   - {fileID: 904955016}
+  - {fileID: 5420411095198049596}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &246417459
@@ -644,6 +644,10 @@ PrefabInstance:
     - target: {fileID: 7230483546076689820, guid: d8035eff1c818ef47a3175a9e9b78158, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7595344313057462621, guid: d8035eff1c818ef47a3175a9e9b78158, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 9175903610223507619, guid: d8035eff1c818ef47a3175a9e9b78158, type: 3}
       propertyPath: m_AnchorMax.y

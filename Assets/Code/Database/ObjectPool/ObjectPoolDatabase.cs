@@ -12,11 +12,7 @@ namespace ObjectPooling
         #region VARIABLES
 
         public const string GET_POOL_CATEGORIES_METHOD = "@" + nameof(ObjectPoolDatabase) + "." + nameof(GetCategoriesNames) + "()";
-        public const string GET_POOL_CHARACTERS_IN_GAME_METHOD = "@" + nameof(ObjectPoolDatabase) + "." + nameof(GetCharactersInGame) + "()";
-        public const string GET_POOL_CAMERAS_METHOD = "@" + nameof(ObjectPoolDatabase) + "." + nameof(GetCameras) + "()";
         public const string GET_POOL_UI_WINDOW_METHOD = "@" + nameof(ObjectPoolDatabase) + "." + nameof(GetUIWindows) + "()";
-        public const string GET_POOL_ITEMS_METHOD = "@" + nameof(ObjectPoolDatabase) + "." + nameof(GetItems) + "()";
-        public const string GET_POOL_PROPS_METHOD = "@" + nameof(ObjectPoolDatabase) + "." + nameof(GetProps) + "()";
 
         [SerializeField] private List<PoolCategoryData> poolCategories;
 
@@ -29,6 +25,11 @@ namespace ObjectPooling
         #endregion
 
         #region METHODS
+
+        public static IEnumerable GetUIWindows()
+        {
+            return GetCategoryInstancesIds("UIWindows");
+        }
 
         public static IEnumerable GetCategoriesNames()
         {
@@ -51,32 +52,6 @@ namespace ObjectPooling
 
             return values;
         }
-
-        public static IEnumerable GetCharactersInGame()
-        {
-            return GetCategoryInstancesIds("CharactersInGame");
-        }
-
-        public static IEnumerable GetCameras()
-        {
-            return GetCategoryInstancesIds("Camera");
-        }
-
-        public static IEnumerable GetUIWindows()
-        {
-            return GetCategoryInstancesIds("UIWindows");
-        }
-
-        public static IEnumerable GetItems()
-        {
-            return GetCategoryInstancesIds("Items");
-        }
-
-        public static IEnumerable GetProps()
-        {
-            return GetCategoryInstancesIds("Prop");
-        }
-
 
         public IEnumerable GetCategoryInstanceIds(int categoryId)
         {
