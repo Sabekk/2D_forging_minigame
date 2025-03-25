@@ -1,6 +1,7 @@
 using Gameplay.Effects;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 
 namespace Gameplay.Management.Effects
@@ -22,6 +23,15 @@ namespace Gameplay.Management.Effects
         #endregion
 
         #region METHODS
+
+        public void FillBuilderByEffectInfos(ref StringBuilder builder)
+        {
+            if (builder == null)
+                return;
+
+            foreach (var effect in ConstEffects)
+                builder.AppendLine(effect.EffectName);
+        }
 
         public bool CanAddEffect(EffectBase effect)
         {

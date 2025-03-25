@@ -49,6 +49,34 @@ namespace Gameplay.Management.Effects
             //TODO ticking for limited effects
         }
 
+        public void FillBuilderByGlobalEffectsInfo(ref StringBuilder builder)
+        {
+            if (builder == null)
+                return;
+
+            if (GlobalStack.ConstEffects.Count > 0)
+            {
+                builder.AppendLine("Global effects:");
+                GlobalStack.FillBuilderByEffectInfos(ref builder);
+            }
+        }
+
+        public void FillBuilderByEffectsInfoForTarget(IEffectable effectable, ref StringBuilder builder)
+        {
+            if (effectable == null)
+                return;
+
+            if (builder == null)
+                return;
+
+            if (EffectStack.TryGetValue(effectable, out var effectsStack))
+                if (effectsStack.ConstEffects.Count > 0)
+                {
+                    builder.AppendLine("Character effects:");
+                    effectsStack.FillBuilderByEffectInfos(ref builder);
+                }
+        }
+
         public string GetEffectsDescription<TE>(List<TE> effects) where TE : GlobalEffect
         {
             StringBuilder builder = new();

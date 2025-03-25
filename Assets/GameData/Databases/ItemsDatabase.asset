@@ -103,7 +103,7 @@ MonoBehaviour:
       data:
         id: 151774841
         effectName: Increases success rate by 10 percentage points
-        effectType: 0
+        effectType: 1
         isStackable: 0
         timeLimit: 0
         valueName: AdditionalSuccessChance
@@ -114,7 +114,7 @@ MonoBehaviour:
       data:
         id: 1023938679
         effectName: Reduces crafting time by 2 seconds
-        effectType: 0
+        effectType: 1
         isStackable: 0
         timeLimit: 0
         valueName: AdditionalProductionSpeed
