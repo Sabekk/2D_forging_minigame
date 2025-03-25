@@ -28,6 +28,7 @@ namespace UI.Window.Inventory
             RefreshItemInSlot();
             RefreshCountInSlot();
             SetSelected(false);
+            AttachEvents();
         }
 
         public override void RemoveItem()

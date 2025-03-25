@@ -100,8 +100,8 @@ namespace Gameplay.Management.UI
                 openedWindows.Add(window);
                 openedWindows.SetActiveOptimizeLastElement(true);
 
-                if (TimeManager.Instance)
-                    TimeManager.Instance.TryToggleTime(false);
+                //if (TimeManager.Instance)
+                //    TimeManager.Instance.TryToggleTime(false);
 
                 OnWindowOpened?.Invoke(window);
             }
@@ -129,8 +129,8 @@ namespace Gameplay.Management.UI
 
                     if (openedWindows.Count == 0)
                     {
-                        if (TimeManager.Instance)
-                            TimeManager.Instance.TryToggleTime(true);
+                        //if (TimeManager.Instance)
+                        //    TimeManager.Instance.TryToggleTime(true);
                     }
                 }
                 else

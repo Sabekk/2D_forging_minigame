@@ -19,9 +19,10 @@ namespace UI.Window.Machines
         [SerializeField, ValueDropdown(ObjectPoolDatabase.GET_POOL_UI_WINDOW_METHOD)] private int itemSlotPrefabId;
         [SerializeField, ValueDropdown(ObjectPoolDatabase.GET_POOL_UI_WINDOW_METHOD)] private int resourceSlotPrefabId;
 
-        [SerializeField] private Transform resourcesContainer;
-        [SerializeField] private Transform itemsContainer;
-        [SerializeField] private int defaultItemsSlots = 10;
+        [SerializeField, FoldoutGroup("Content")] private Transform resourcesContainer;
+        [SerializeField, FoldoutGroup("Content")] private Transform itemsContainer;
+        [SerializeField, FoldoutGroup("Content")] private int defaultItemsSlots = 10;
+
 
         //TODO Add to character inventory count slots value
         private List<ItemSlot> itemSlots;
@@ -118,19 +119,20 @@ namespace UI.Window.Machines
 
         private void HandleStackCreated(ItemStackInGame itemStackInGame)
         {
-            ItemSlot slot = itemSlots.Find(x => x.ItemStack.IdEquals(itemStackInGame.Id));
+            ItemSlot slot = itemSlots.Find(x => x.HasItem == false);
             if (slot == null)
                 AddItemSlot(itemStackInGame);
+            else
+                slot.SetItem(itemStackInGame);
         }
 
         private void HandleStackRemoved(ItemStackInGame itemStackInGame)
         {
-            ItemSlot slot = itemSlots.Find(x => x.ItemStack.IdEquals(itemStackInGame.Id));
+            ItemSlot slot = itemSlots.Find(x => x.HasItem && x.ItemStack.IdEquals(itemStackInGame.Id));
             if (slot)
             {
-                slot.CleanUp();
-                ObjectPool.Instance.ReturnToPool(slot);
-                itemSlots.Remove(slot);
+                slot.SetItem(null);
+                slot.transform.SetAsLastSibling();
             }
         }
 

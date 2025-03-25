@@ -140,7 +140,8 @@ namespace Gameplay.HUD
 
         public void HandleButtonClick()
         {
-            UIManager.Instance.OpenWindow<MachinesWindow>(windowId);
+            MachinesWindow window = UIManager.Instance.OpenWindow<MachinesWindow>(windowId);
+            window.SelectMachine(Machine);
         }
 
         #endregion

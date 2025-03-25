@@ -1,3 +1,4 @@
+using Gameplay.Machines;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,8 @@ namespace UI.Window.Machines
     {
         #region VARIABLES
 
+        [SerializeField] private MachineWindow_Forging forgingPart;
+
         #endregion
 
         #region PROPERTIES
@@ -15,6 +18,11 @@ namespace UI.Window.Machines
         #endregion
 
         #region METHODS
+
+        public void SelectMachine(MachineInGame machineInGame)
+        {
+            forgingPart.SelectMachine(machineInGame);
+        }
 
         #endregion
     }
