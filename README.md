@@ -64,6 +64,7 @@ Sposób nakładania efektu:
 
 # Wyjaśnienia
 **Character**
+
 Mimo, że gra jest 2D i opiera się na UI postanowiłem utworzyć postać (w managerze).
 _Dlaczego?:_
  - Postac posiada własne modyfikowalne wartości, które moga być zmieniane przez efekty. 
@@ -72,17 +73,20 @@ _Dlaczego?:_
  - Takie podejście pozwala na dalszy rozwój gry poprzez na przykład dodawanie kolejnych postaci NPC czy innych klas różniących się w początkowych ustawieniach
 
 **Resource**
+
 Resource mimo podobieństwa do modifiable values są oddzielną wartością. Są proste i nie wymagają nakładania na nich modyfikatorów.
 Takie podojście pozwala zachować resource jako proste wartości oraz uniknąć potencjalnych problemów z np efektami czy modyfikatorami.
 
 Mimo wszystko w przyszłości mogą zostać ujednolicone aby miały wspólną bazę
 
 **Resource w managerze**
+
 Postać posiada przedmioty, lecz manager odpowiada za resource.
 _Dlaczego?:_
 - kuźnia stanowi jedność. Niezależnie od posiadanych przedmiotów czy cech, resource zawsze będą wspólne dla każdego
 - jedno miejsce kontroli nad resourcami pozwala na uniknięcie błędów oraz jest czytelniejsze
 
 **Obsługa gry poprzez managery**
+
 Gra w dużej mierze opiera się na obsłudze przez managery. Jest to prosta gra która nie wymaga indywidualnego podejścia do każdego obiektu czy elementu osobno.
 Podejście te pozwala na zachowanie porzadku oraz kontroli nad rozgrywką. Pozwala również na łatwe rowzijanie oraz naprawę potencjalnych problemów
