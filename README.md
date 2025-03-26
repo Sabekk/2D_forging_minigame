@@ -78,6 +78,7 @@ Z prawej strony widoczne są aktywne efekty
 3. Right bar
 Widoczne są wszytkie maszyny kuźni które dodatkowo informują gracza o aktualnym procesie produkcyjnym. Dodatowo otwierają okno maszyny. 
 Do implementacji rozpoczynanie produkcji
+
 ![image](https://github.com/user-attachments/assets/dd6a59ce-64af-47fb-9a05-3372ff144bd0)
 
 # Wyjaśnienia
