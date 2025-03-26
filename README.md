@@ -43,6 +43,9 @@ Określają one:
  - czas trwania tworzenia
  - id finalnego przedmiotu
 
+Przedmioty na finalnym etapie produkcji mogą zostać niewyprodukowane ze wzgledu na wartość szansy powodzenia.
+Można ją zwiększać odpowiednimi efektami
+
 # Zasoby
 Gra na poczatku dostarcza losową ilośc zasobów. Umożliwiają one produkcję przedmiotów.
 Zaimplementowany został system, który automatycznie dostarcza zasoby co okreslony czas, aby gracz nie zablokował swojego postepu.
@@ -80,6 +83,16 @@ Widoczne są wszytkie maszyny kuźni które dodatkowo informują gracza o aktual
 Do implementacji rozpoczynanie produkcji
 
 ![image](https://github.com/user-attachments/assets/dd6a59ce-64af-47fb-9a05-3372ff144bd0)
+
+# Przyszłe features
+**Sklep**
+
+Umożliwi w łatwy sposób nabywanie i sprzedawanie przemdiotów w celu upłynniena rozgrywki. Przedmioty posiadają już swoją wartość
+
+
+**Animacje**
+
+Tworzenie przedmiotów może skończyć się niepowodzeniem co warto zwilualizować odpowiednią animacją np na przycisku czy w oknie
 
 # Wyjaśnienia
 **Character**
