@@ -52,6 +52,10 @@ Zaimplementowany został system, który automatycznie dostarcza zasoby co okresl
 
 Do zaimplementowania pozostał sklep który umożliwi sprzedaż oraz zakup przedmiotów
 
+# Maszyny
+Gra obecnie oferuje 5 maszyn produkujących. Receptury do nich są osobno przypisane w bazie receptur co pozwala, aby były one dostepne dla kilku maszyn jednakowo.
+Początkowo 3 maszyny są odblokowane. 2 z nich wymagają odblokowania poprzez np. wykonanie misji.
+
 # Misje
 Gra oferuje system misji w których gracz musi spełni okreslone warunki. Misje mogą być czasowe.
 W nagrode nakładane są odpowiednio ustaswione efekty pozytywne (w przypadku powodzenia) i negatywne (misja nieudana)
@@ -84,6 +88,12 @@ Do implementacji rozpoczynanie produkcji
 
 ![image](https://github.com/user-attachments/assets/dd6a59ce-64af-47fb-9a05-3372ff144bd0)
 
+# UI
+Obecnie w grze zaimplementowany został uniwersalny UI Manager który w łatwy sposób może otwierać oraz zamykać dolone utworzone okno.
+
+Okno maszyn:
+![image](https://github.com/user-attachments/assets/612340b8-7ffb-4cd6-9af7-29392acc6e65)
+
 # Przyszłe features
 **Sklep**
 
@@ -103,6 +113,12 @@ _Dlaczego?:_
  - Posiada również swój ekwipunek z przedmiotami.
  - Postać posiada również swoją startową wartość data która w łatwy i czytelny sposób określa bazowe wartości czy przedmioty itd
  - Takie podejście pozwala na dalszy rozwój gry poprzez na przykład dodawanie kolejnych postaci NPC czy innych klas różniących się w początkowych ustawieniach
+
+
+**Początkowe ustawienia w character data**
+
+Ustawienie początkowych wartości gry w character data pozwala na jej łatwe rozszerzanie.
+Można np. dodać inne klasy którymi można grać czy inne tryby, które różnić się moga początkowymi ustawieniami.
 
 
 **Resource**
